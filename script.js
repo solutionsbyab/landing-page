@@ -45,3 +45,18 @@ if (form) {
     form.reset();
   });
 }
+// Close mobile menu if user scrolls (prevents it staying open)
+let lastY = window.scrollY;
+
+window.addEventListener("scroll", () => {
+  if (!burger || !mobileMenu) return;
+
+  const isOpen = burger.getAttribute("aria-expanded") === "true";
+  if (!isOpen) return;
+
+  if (Math.abs(window.scrollY - lastY) > 10) {
+    burger.setAttribute("aria-expanded", "false");
+    mobileMenu.hidden = true;
+  }
+  lastY = window.scrollY;
+}, { passive: true });
