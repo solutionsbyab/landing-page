@@ -1,335 +1,138 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Solutions by AB — Technology. Tailored. Full-stack builds, CRM pipelines and automation for growing businesses." />
-  <title>Solutions by AB — Technology. Tailored.</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solutions by AB — Technology, Tailored</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <div class="bg" aria-hidden="true"></div>
-  <div class="bgGlow" aria-hidden="true"></div>
+  <div class="bg"></div>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="topbar">
-    <a class="brand" href="#top" aria-label="Solutions by AB home">
-      <img class="brand__logo" src="assets/logo.png" alt="Solutions by AB logo" />
+    <a class="brand" href="#">
+      <img src="assets/logo.png" class="brand__logo" alt="Solutions by AB" />
       <span class="brand__text">Solutions by AB</span>
     </a>
 
     <nav class="nav">
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
+      <a href="#work">Client Work</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
 
-    <div class="topbar__cta" id="menuWrap">
-      <!-- More professional than "View Work" -->
-      <a class="btn btn--ghost" href="#portfolio">Case Studies</a>
+    <div class="topbar__cta">
+      <a class="btn btn--primary btn--sm" href="https://wa.me/447000000000">WhatsApp</a>
+      <button class="burger" id="menuBtn">☰</button>
 
-      <!-- Replace WA number -->
-      <a class="btn btn--primary"
-         href="https://wa.me/447000000000?text=Hi%20Solutions%20by%20AB%20—%20I’d%20like%20to%20discuss%20a%20project."
-         target="_blank" rel="noopener">
-        WhatsApp
-      </a>
-
-      <!-- Burger (animated) -->
-      <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
-        <span class="burger__lines" aria-hidden="true"></span>
-      </button>
-
-      <!-- Dropdown -->
-      <div class="dropdown" id="dropdownMenu" hidden>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
+      <div class="dropdown" id="menu" hidden>
+        <a href="#work">Client Work</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
-
         <div class="dropdown__divider"></div>
-
-        <a class="btn btn--primary btn--sm"
-           href="https://wa.me/447000000000?text=Hi%20Solutions%20by%20AB%20—%20I’d%20like%20to%20discuss%20a%20project."
-           target="_blank" rel="noopener">
-          Start on WhatsApp
-        </a>
+        <a class="btn btn--primary btn--sm" href="https://wa.me/447000000000">Chat on WhatsApp</a>
       </div>
     </div>
   </header>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero container">
-      <div class="hero__left reveal">
-        <div class="hero__tag">Systems • Full-Stack • Automation</div>
+  <!-- HERO -->
+  <section class="hero container">
+    <div>
+      <div class="hero__tag">UK-based • Full-stack delivery</div>
 
-        <h1 class="hero__title">
-          <span class="hero__titleLine">Solutions by AB</span>
-          <span class="hero__titleLine accent">Technology. Tailored.</span>
-        </h1>
+      <h1 class="hero__title">
+        <span class="hero__titleLine">Systems built</span>
+        <span class="hero__titleLine accent">to scale operations</span>
+      </h1>
 
-        <p class="hero__sub">
-          We build the systems behind growing businesses — from full-stack websites and launch packages
-          to CRM pipelines and automation that keep operations clean as you scale.
-        </p>
+      <p class="hero__sub">
+        We design and deliver practical digital systems — from full-stack
+        launch packages to CRM pipelines and workflow automation that keep
+        businesses clean as they grow.
+      </p>
 
-        <div class="hero__buttons">
-          <a class="btn btn--primary btn--glow"
-             href="https://wa.me/447000000000?text=Hi%20Solutions%20by%20AB%20—%20I’d%20like%20to%20discuss%20a%20project."
-             target="_blank" rel="noopener">
-            Start a Project
-          </a>
-
-          <!-- Replace booking link or remove -->
-          <a class="btn btn--ghost"
-             href="#contact">
-            Contact
-          </a>
-        </div>
-
-        <div class="hero__trust">
-          <span class="trustItem">UK-based</span>
-          <span class="trustDot"></span>
-          <span class="trustItem">Full-stack delivery</span>
-          <span class="trustDot"></span>
-          <span class="trustItem">Startup → Scale</span>
-        </div>
+      <div class="hero__buttons">
+        <a class="btn btn--primary" href="https://wa.me/447000000000">Start a Project</a>
       </div>
 
-      <div class="hero__right reveal">
-        <div class="showcase">
-          <div class="showcase__top">
-            <span class="dot dot--ok"></span>
-            <span class="dot dot--warn"></span>
-            <span class="dot dot--info"></span>
-            <span class="showcase__title">Delivery Snapshot</span>
-          </div>
-
-          <div class="showcase__list">
-            <div class="showRow">
-              <span class="badge badge--live">Delivered</span>
-              <div class="showText">
-                <div class="showName">itsadamharris.com — Full Launch Pack</div>
-                <div class="showDesc">Website + EPK + domain email + industry-ready embeds & links</div>
-              </div>
-            </div>
-
-            <div class="showRow">
-              <span class="badge badge--progress">In Progress</span>
-              <div class="showText">
-                <div class="showName">Dynamic QR Property Solution</div>
-                <div class="showDesc">Managed QR codes for listings & signage — update links anytime</div>
-              </div>
-            </div>
-
-            <div class="showRow">
-              <span class="badge badge--concept">Concept</span>
-              <div class="showText">
-                <div class="showName">Business Scalability System</div>
-                <div class="showDesc">Enquiries → pipeline → CRM → automation → reporting</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="showcase__footer">
-            <a class="link" href="#portfolio">View portfolio →</a>
-          </div>
-        </div>
+      <div class="hero__trust">
+        <span>Startup → Scale</span>
+        <span class="trustDot"></span>
+        <span>Clean delivery</span>
+        <span class="trustDot"></span>
+        <span>Long-term systems</span>
       </div>
-    </section>
+    </div>
 
-    <!-- SERVICES -->
-    <section id="services" class="section container">
-      <div class="sectionHead reveal">
-        <h2>What we do</h2>
-        <p>
-          We design and build the systems that run modern businesses —
-          from polished launch packages to operational workflows, CRMs and automation.
-        </p>
+    <!-- DELIVERY SNAPSHOT -->
+    <div class="showcase" id="work">
+      <div class="showcase__head">
+        <span class="dot teal"></span>
+        <span class="dot amber"></span>
+        <span class="dot blue"></span>
+        <span class="showcase__title">Delivery Snapshot</span>
       </div>
 
-      <div class="serviceGrid">
-        <article class="serviceCard reveal">
-          <h3>Launch Packages</h3>
-          <p>High-quality websites and brand presence built to convert and build trust.</p>
-          <ul class="bullets">
-            <li>Landing pages & websites</li>
-            <li>EPK / portfolio builds</li>
-            <li>Email + domain setup</li>
-          </ul>
-        </article>
-
-        <article class="serviceCard reveal">
-          <h3>CRM & Workflow Pipelines</h3>
-          <p>We turn enquiries into a clean pipeline — tracked, organised and scalable.</p>
-          <ul class="bullets">
-            <li>Forms → CRM → follow-ups</li>
-            <li>Lead routing & tagging</li>
-            <li>Operations dashboards</li>
-          </ul>
-        </article>
-
-        <article class="serviceCard reveal">
-          <h3>Automation & Integrations</h3>
-          <p>Remove repetitive admin work with automations that keep things moving.</p>
-          <ul class="bullets">
-            <li>Reminders & notifications</li>
-            <li>WhatsApp / email automation</li>
-            <li>Tool integration strategy</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- PORTFOLIO -->
-    <section id="portfolio" class="section container">
-      <div class="sectionHead reveal">
-        <h2>Case Studies</h2>
-        <p>Delivered work + builds in progress. Proof, not noise.</p>
-      </div>
-
-      <div class="portfolioRow reveal" aria-label="Portfolio slider">
-        <article class="workCard">
-          <div class="workCard__top">
-            <span class="badge badge--live">Delivered</span>
-            <span class="workCard__tag">Full Launch Pack</span>
-          </div>
-          <h3>itsadamharris.com</h3>
-          <p>Website + EPK + domain email setup + industry-ready embeds and links.</p>
-          <div class="workCard__actions">
-            <a class="btn btn--ghost btn--sm" href="https://itsadamharris.com" target="_blank" rel="noopener">Visit site</a>
-            <a class="btn btn--ghost btn--sm" href="#contact">Request similar</a>
-          </div>
-        </article>
-
-        <article class="workCard">
-          <div class="workCard__top">
-            <span class="badge badge--progress">In Progress</span>
-            <span class="workCard__tag">Property Tech</span>
-          </div>
-          <h3>Dynamic QR Property Solution</h3>
-          <p>A managed QR system for estate agents — update listing links anytime.</p>
-          <div class="workCard__actions">
-            <a class="btn btn--ghost btn--sm" href="#contact">Enquire</a>
-            <a class="btn btn--ghost btn--sm" href="#services">Services</a>
-          </div>
-        </article>
-
-        <article class="workCard">
-          <div class="workCard__top">
-            <span class="badge badge--concept">Concept</span>
-            <span class="workCard__tag">Scalability</span>
-          </div>
-          <h3>Business Scalability System</h3>
-          <p>Enquiries → pipeline → CRM → automation → reporting. A clean backbone for growth.</p>
-          <div class="workCard__actions">
-            <a class="btn btn--ghost btn--sm" href="#contact">Build this</a>
-            <a class="btn btn--ghost btn--sm" href="#services">How it works</a>
-          </div>
-        </article>
-      </div>
-
-      <div class="sliderHint reveal"><span class="muted">Tip: swipe to browse →</span></div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section container">
-      <div class="aboutCard reveal">
+      <div class="showRow">
+        <div class="statusPill statusPill--live"><span>Delivered</span></div>
         <div>
-          <h2>About</h2>
-          <p>
-            Solutions by AB is a systems-building company. We help founders and teams move from “idea” to “operational”
-            with clean delivery — launch packages, pipelines, and automation that scales.
-          </p>
-          <p class="muted">Build what matters. Ship it properly. Scale without chaos.</p>
-        </div>
-
-        <div class="aboutStats">
-          <div class="stat"><div class="stat__num">Launch</div><div class="stat__label">Premium first impression</div></div>
-          <div class="stat"><div class="stat__num">Pipeline</div><div class="stat__label">Leads handled properly</div></div>
-          <div class="stat"><div class="stat__num">Scale</div><div class="stat__label">Systems that grow</div></div>
+          <h3>itsadamharris.com — Full Launch Pack</h3>
+          <p>Website, EPK, domain email, industry-ready embeds and links.</p>
+          <a class="link" href="https://itsadamharris.com" target="_blank">Visit site →</a>
         </div>
       </div>
-    </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section container">
-      <div class="sectionHead reveal">
-        <h2>Contact</h2>
-        <p>Fastest route is WhatsApp. For formal enquiries, use the form.</p>
-      </div>
-
-      <div class="contactGrid">
-        <div class="contactLeft reveal">
-          <h3>Start a project</h3>
-          <p class="muted">Message us on WhatsApp Business and we’ll reply quickly.</p>
-
-          <a class="btn btn--primary btn--glow"
-             href="https://wa.me/447000000000?text=Hi%20Solutions%20by%20AB%20—%20I’d%20like%20to%20discuss%20a%20project."
-             target="_blank" rel="noopener">
-            WhatsApp Business
-          </a>
+      <div class="showRow">
+        <div class="statusPill statusPill--progress"><span>In Progress</span></div>
+        <div>
+          <h3>Dynamic QR Property Solution</h3>
+          <p>Managed QR codes for listings & signage — update links anytime.</p>
         </div>
-
-        <form class="contactForm reveal" id="contactForm">
-          <h3>Send an enquiry</h3>
-
-          <label>Name
-            <input name="name" required placeholder="Your name" />
-          </label>
-
-          <label>Email
-            <input name="email" type="email" required placeholder="you@company.com" />
-          </label>
-
-          <label>What do you need?
-            <select name="service" required>
-              <option value="" disabled selected>Select one</option>
-              <option>Launch Package</option>
-              <option>CRM / Pipeline</option>
-              <option>Automation / Integrations</option>
-              <option>Other</option>
-            </select>
-          </label>
-
-          <label>Message
-            <textarea name="message" rows="5" required placeholder="Tell us what you're building..."></textarea>
-          </label>
-
-          <button class="btn btn--primary" type="submit">Send enquiry</button>
-          <p class="tiny muted" id="formNote">We await your query</p>
-        </form>
-      </div>
-    </section>
-
-    <footer class="footer container">
-      <div class="footer__left">
-        <div class="footer__brand">Solutions by AB</div>
-        <div class="tiny muted">Technology. Tailored.</div>
       </div>
 
-      <div class="footer__right">
-        <a class="link" href="#services">Services</a>
-        <a class="link" href="#portfolio">Portfolio</a>
-        <a class="link" href="#contact">Contact</a>
+      <div class="showRow">
+        <div class="statusPill statusPill--concept"><span>Concept</span></div>
+        <div>
+          <h3>Business Scalability System</h3>
+          <p>Enquiries → pipeline → CRM → automation → reporting.</p>
+        </div>
       </div>
-    </footer>
+    </div>
+  </section>
 
-    <a class="fab"
-       href="https://wa.me/447000000000?text=Hi%20Solutions%20by%20AB%20—%20I’d%20like%20to%20discuss%20a%20project."
-       target="_blank" rel="noopener"
-       aria-label="Chat on WhatsApp">
-      💬
+  <!-- ABOUT -->
+  <section class="section container" id="about">
+    <h2>How we work</h2>
+    <p class="muted">
+      We’re not a template agency. We build systems with intent — choosing the
+      right stack, simplifying complexity, and delivering tools businesses
+      can actually run with.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section container" id="contact">
+    <h2>Start a conversation</h2>
+    <p class="muted">
+      If you’re planning a launch, rebuilding operations, or tightening
+      internal workflows, let’s talk.
+    </p>
+
+    <a class="btn btn--primary" href="https://wa.me/447000000000">
+      Chat on WhatsApp
     </a>
-  </main>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer container">
+    <span>© Solutions by AB</span>
+    <span class="muted">UK • Systems & delivery</span>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a class="fab" href="https://wa.me/447000000000">💬</a>
 
   <script src="script.js"></script>
 </body>
