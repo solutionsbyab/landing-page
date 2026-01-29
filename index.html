@@ -15,6 +15,7 @@
 
 <body>
   <div class="bg" aria-hidden="true"></div>
+  <div class="bgGlow" aria-hidden="true"></div>
 
   <!-- Header -->
   <header class="topbar">
@@ -31,20 +32,22 @@
     </nav>
 
     <div class="topbar__cta" id="menuWrap">
-      <a class="btn btn--ghost" href="#portfolio">View Work</a>
+      <!-- More professional than "View Work" -->
+      <a class="btn btn--ghost" href="#portfolio">Case Studies</a>
 
+      <!-- Replace WA number -->
       <a class="btn btn--primary"
          href="https://wa.me/447000000000?text=Hi%20Solutions%20by%20AB%20—%20I’d%20like%20to%20discuss%20a%20project."
          target="_blank" rel="noopener">
-        Chat on WhatsApp
+        WhatsApp
       </a>
 
-      <!-- Burger -->
+      <!-- Burger (animated) -->
       <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
-        ☰
+        <span class="burger__lines" aria-hidden="true"></span>
       </button>
 
-      <!-- Dropdown menu (anchored to burger) -->
+      <!-- Dropdown -->
       <div class="dropdown" id="dropdownMenu" hidden>
         <a href="#services">Services</a>
         <a href="#portfolio">Portfolio</a>
@@ -56,7 +59,7 @@
         <a class="btn btn--primary btn--sm"
            href="https://wa.me/447000000000?text=Hi%20Solutions%20by%20AB%20—%20I’d%20like%20to%20discuss%20a%20project."
            target="_blank" rel="noopener">
-          Chat on WhatsApp
+          Start on WhatsApp
         </a>
       </div>
     </div>
@@ -82,13 +85,13 @@
           <a class="btn btn--primary btn--glow"
              href="https://wa.me/447000000000?text=Hi%20Solutions%20by%20AB%20—%20I’d%20like%20to%20discuss%20a%20project."
              target="_blank" rel="noopener">
-            Start on WhatsApp
+            Start a Project
           </a>
 
+          <!-- Replace booking link or remove -->
           <a class="btn btn--ghost"
-             href="https://calendly.com/your-link"
-             target="_blank" rel="noopener">
-            Book a Call
+             href="#contact">
+            Contact
           </a>
         </div>
 
@@ -147,37 +150,40 @@
     <section id="services" class="section container">
       <div class="sectionHead reveal">
         <h2>What we do</h2>
-        <p>We build clean, reliable systems that help businesses launch fast and scale without messy operations.</p>
+        <p>
+          We design and build the systems that run modern businesses —
+          from polished launch packages to operational workflows, CRMs and automation.
+        </p>
       </div>
 
       <div class="serviceGrid">
         <article class="serviceCard reveal">
-          <h3>Full-Stack Launch Packages</h3>
-          <p>Websites, landing pages, and branded assets that make you look established from day one.</p>
+          <h3>Launch Packages</h3>
+          <p>High-quality websites and brand presence built to convert and build trust.</p>
           <ul class="bullets">
-            <li>Websites & landing pages</li>
-            <li>EPK / portfolio pages</li>
-            <li>Launch-ready links & embeds</li>
+            <li>Landing pages & websites</li>
+            <li>EPK / portfolio builds</li>
+            <li>Email + domain setup</li>
           </ul>
         </article>
 
         <article class="serviceCard reveal">
-          <h3>Pipelines, CRM & Automation</h3>
-          <p>Workflows that move leads through a proper pipeline — with less admin and more momentum.</p>
+          <h3>CRM & Workflow Pipelines</h3>
+          <p>We turn enquiries into a clean pipeline — tracked, organised and scalable.</p>
           <ul class="bullets">
             <li>Forms → CRM → follow-ups</li>
             <li>Lead routing & tagging</li>
-            <li>Automation to remove repeat tasks</li>
+            <li>Operations dashboards</li>
           </ul>
         </article>
 
         <article class="serviceCard reveal">
-          <h3>Systems & Tech Consulting</h3>
-          <p>We map the stack and plan the next moves so scaling stays simple and cost-efficient.</p>
+          <h3>Automation & Integrations</h3>
+          <p>Remove repetitive admin work with automations that keep things moving.</p>
           <ul class="bullets">
-            <li>Tooling & architecture planning</li>
-            <li>Security-aware setup</li>
-            <li>Cost-efficient scaling</li>
+            <li>Reminders & notifications</li>
+            <li>WhatsApp / email automation</li>
+            <li>Tool integration strategy</li>
           </ul>
         </article>
       </div>
@@ -186,7 +192,7 @@
     <!-- PORTFOLIO -->
     <section id="portfolio" class="section container">
       <div class="sectionHead reveal">
-        <h2>Portfolio</h2>
+        <h2>Case Studies</h2>
         <p>Delivered work + builds in progress. Proof, not noise.</p>
       </div>
 
@@ -194,13 +200,13 @@
         <article class="workCard">
           <div class="workCard__top">
             <span class="badge badge--live">Delivered</span>
-            <span class="workCard__tag">Full-Stack Package</span>
+            <span class="workCard__tag">Full Launch Pack</span>
           </div>
           <h3>itsadamharris.com</h3>
-          <p>Full launch pack: website + EPK + domain email + industry-ready embeds and links.</p>
+          <p>Website + EPK + domain email setup + industry-ready embeds and links.</p>
           <div class="workCard__actions">
             <a class="btn btn--ghost btn--sm" href="https://itsadamharris.com" target="_blank" rel="noopener">Visit site</a>
-            <a class="btn btn--ghost btn--sm" href="#contact">Get similar</a>
+            <a class="btn btn--ghost btn--sm" href="#contact">Request similar</a>
           </div>
         </article>
 
@@ -210,7 +216,7 @@
             <span class="workCard__tag">Property Tech</span>
           </div>
           <h3>Dynamic QR Property Solution</h3>
-          <p>Managed QR codes for listings & signage — update links anytime without reprinting.</p>
+          <p>A managed QR system for estate agents — update listing links anytime.</p>
           <div class="workCard__actions">
             <a class="btn btn--ghost btn--sm" href="#contact">Enquire</a>
             <a class="btn btn--ghost btn--sm" href="#services">Services</a>
@@ -231,7 +237,7 @@
         </article>
       </div>
 
-      <div class="sliderHint reveal"><span class="muted">Tip: swipe / trackpad scroll to browse →</span></div>
+      <div class="sliderHint reveal"><span class="muted">Tip: swipe to browse →</span></div>
     </section>
 
     <!-- ABOUT -->
@@ -239,7 +245,10 @@
       <div class="aboutCard reveal">
         <div>
           <h2>About</h2>
-          <p>Solutions by AB is a systems-building company. We help founders and teams go from idea to operational — with clean delivery.</p>
+          <p>
+            Solutions by AB is a systems-building company. We help founders and teams move from “idea” to “operational”
+            with clean delivery — launch packages, pipelines, and automation that scales.
+          </p>
           <p class="muted">Build what matters. Ship it properly. Scale without chaos.</p>
         </div>
 
@@ -268,12 +277,6 @@
              target="_blank" rel="noopener">
             WhatsApp Business
           </a>
-
-          <div class="contactLinks">
-            <a class="link" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn →</a>
-            <a class="link" href="https://calendly.com/your-link" target="_blank" rel="noopener">Book a call →</a>
-            <a class="link" href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram →</a>
-          </div>
         </div>
 
         <form class="contactForm reveal" id="contactForm">
@@ -290,9 +293,9 @@
           <label>What do you need?
             <select name="service" required>
               <option value="" disabled selected>Select one</option>
-              <option>Full-Stack Launch Package</option>
-              <option>Pipelines / CRM / Automation</option>
-              <option>Consulting / Planning</option>
+              <option>Launch Package</option>
+              <option>CRM / Pipeline</option>
+              <option>Automation / Integrations</option>
               <option>Other</option>
             </select>
           </label>
@@ -302,7 +305,7 @@
           </label>
 
           <button class="btn btn--primary" type="submit">Send enquiry</button>
-          <p class="tiny muted" id="formNote">Demo mode: hook this form to Formspree/Netlify or your backend to receive emails.</p>
+          <p class="tiny muted" id="formNote">Demo mode: connect to Formspree/Netlify/back-end to receive emails.</p>
         </form>
       </div>
     </section>
@@ -312,6 +315,7 @@
         <div class="footer__brand">Solutions by AB</div>
         <div class="tiny muted">Technology. Tailored.</div>
       </div>
+
       <div class="footer__right">
         <a class="link" href="#services">Services</a>
         <a class="link" href="#portfolio">Portfolio</a>
