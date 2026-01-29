@@ -46,37 +46,62 @@
       <p class="muted">Choose the channel that suits you. Fast replies on messaging.</p>
     </div>
 
-    <div class="contactHub">
-      <a class="hubCard" href="mailto:hello@solutionsbyab.com?subject=Project%20enquiry%20—%20Solutions%20by%20AB">
-        <div class="hubIcon">✉️</div>
-        <div>
-          <div class="hubTitle">Email</div>
-          <div class="hubSub">hello@solutionsbyab.com</div>
+    <div class="contactGrid">
+      <!-- Email -->
+      <a class="contactCard" href="mailto:hello@solutionsbyab.com?subject=Project%20enquiry%20—%20Solutions%20by%20AB">
+        <div class="contactIcon contactIcon--email" aria-hidden="true">
+          <!-- Mail icon -->
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 7.5c0-1.1.9-2 2-2h12c1.1 0 2 .9 2 2v9c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2v-9Z" stroke="currentColor" stroke-width="1.8"/>
+            <path d="m5.5 8.2 6.1 4.5c.25.18.55.28.86.28s.61-.1.86-.28l6.1-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
         </div>
-        <div class="hubArrow">→</div>
+        <div class="contactText">
+          <div class="contactTitle">Email</div>
+          <div class="contactValue">hello@solutionsbyab.com</div>
+          <div class="contactNote">Tap to compose</div>
+        </div>
+        <div class="contactArrow" aria-hidden="true">→</div>
       </a>
 
-      <a class="hubCard" href="https://wa.me/447000000000?text=Hi%20Solutions%20by%20AB%20—%20I’d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">
-        <div class="hubIcon">💬</div>
-        <div>
-          <div class="hubTitle">WhatsApp</div>
-          <div class="hubSub">Quickest route</div>
+      <!-- WhatsApp -->
+      <a class="contactCard" href="https://wa.me/447000000000?text=Hi%20Solutions%20by%20AB%20—%20I’d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">
+        <div class="contactIcon contactIcon--wa" aria-hidden="true">
+          <!-- WhatsApp icon (simple) -->
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 21a9 9 0 1 0-7.8-4.5L3.5 21l4.6-1.1A8.96 8.96 0 0 0 12 21Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M9.2 9.5c.2-.6.5-.7.9-.7h.7c.2 0 .4.1.5.4l.6 1.6c.1.3 0 .6-.2.8l-.4.4c-.1.1-.2.4 0 .7.2.3.7 1.2 1.5 1.9.9.8 1.7 1.1 2 .9.3-.1.5-.4.6-.6l.4-.6c.2-.2.5-.3.8-.2l1.6.6c.3.1.4.3.4.5v.7c0 .4-.1.7-.7.9-.6.2-2 .5-4.1-.4-2.1-.9-3.7-3.2-4.1-4.1-.9-2.1-.6-3.5-.4-4.1Z" fill="currentColor" opacity=".9"/>
+          </svg>
         </div>
-        <div class="hubArrow">→</div>
+        <div class="contactText">
+          <div class="contactTitle">WhatsApp</div>
+          <div class="contactValue">Message for fastest reply</div>
+          <div class="contactNote">Tap to open chat</div>
+        </div>
+        <div class="contactArrow" aria-hidden="true">→</div>
       </a>
 
-      <a class="hubCard" href="https://signal.me/#p/+447000000000" target="_blank" rel="noopener">
-        <div class="hubIcon">🔒</div>
-        <div>
-          <div class="hubTitle">Signal</div>
-          <div class="hubSub">Private messaging</div>
+      <!-- Signal -->
+      <a class="contactCard" href="https://signal.me/#p/+447000000000" target="_blank" rel="noopener">
+        <div class="contactIcon contactIcon--signal" aria-hidden="true">
+          <!-- Signal-like bubble -->
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 20c4.4 0 8-3 8-6.8S16.4 6.4 12 6.4 4 9.4 4 13.2c0 1.4.5 2.7 1.4 3.8L4.5 20l3.3-1.2c1.2.7 2.6 1.2 4.2 1.2Z"
+              stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M8.5 12.8h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
         </div>
-        <div class="hubArrow">→</div>
+        <div class="contactText">
+          <div class="contactTitle">Signal</div>
+          <div class="contactValue">Private messaging</div>
+          <div class="contactNote">Tap to open Signal</div>
+        </div>
+        <div class="contactArrow" aria-hidden="true">→</div>
       </a>
     </div>
 
     <div class="tiny muted" style="margin-top:18px;">
-      Replace placeholders: WhatsApp number, Signal link, and email address.
+      Replace the placeholders: WhatsApp number + Signal link + email if needed.
     </div>
   </main>
 
