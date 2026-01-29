@@ -2,14 +2,22 @@ const burgerBtn = document.getElementById("burgerBtn");
 const dropdownMenu = document.getElementById("dropdownMenu");
 const menuWrap = document.getElementById("menuWrap");
 
+function lockScroll(lock) {
+  document.body.style.overflow = lock ? "hidden" : "";
+}
+
 function openDropdown() {
   burgerBtn.setAttribute("aria-expanded", "true");
+  burgerBtn.classList.add("is-open");
   dropdownMenu.hidden = false;
+  lockScroll(true);
 }
 
 function closeDropdown() {
   burgerBtn.setAttribute("aria-expanded", "false");
+  burgerBtn.classList.remove("is-open");
   dropdownMenu.hidden = true;
+  lockScroll(false);
 }
 
 if (burgerBtn && dropdownMenu && menuWrap) {
@@ -19,23 +27,22 @@ if (burgerBtn && dropdownMenu && menuWrap) {
     isOpen ? closeDropdown() : openDropdown();
   });
 
-  // Close if user clicks anywhere outside the dropdown
+  // Close if user taps anywhere outside menu area
   document.addEventListener("click", (e) => {
-    const clickedInside = menuWrap.contains(e.target);
-    if (!clickedInside) closeDropdown();
+    if (!menuWrap.contains(e.target)) closeDropdown();
   });
 
-  // Close when user taps a dropdown link
+  // Close when clicking any link in dropdown
   dropdownMenu.querySelectorAll("a").forEach((a) => {
     a.addEventListener("click", () => closeDropdown());
   });
 
-  // Close on scroll/touch move (mobile safari)
+  // Close on scroll / swipe (mobile)
   window.addEventListener("scroll", closeDropdown, { passive: true });
   window.addEventListener("touchmove", closeDropdown, { passive: true });
 }
 
-// Slide-in reveal on scroll
+// Reveal animation
 const revealEls = document.querySelectorAll(".reveal");
 if ("IntersectionObserver" in window) {
   const obs = new IntersectionObserver((entries) => {
@@ -46,22 +53,19 @@ if ("IntersectionObserver" in window) {
       }
     });
   }, { threshold: 0.12 });
+
   revealEls.forEach((el) => obs.observe(el));
 } else {
   revealEls.forEach((el) => el.classList.add("is-visible"));
 }
 
-// Demo contact form (replace with Formspree/Netlify/backend)
+// Demo contact form
 const form = document.getElementById("contactForm");
 const formNote = document.getElementById("formNote");
-
 if (form) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    if (formNote) {
-      formNote.textContent =
-        "Received (demo). Connect this form to Formspree/Netlify or your backend to receive emails.";
-    }
+    if (formNote) formNote.textContent = "Received (demo). Connect to Formspree/Netlify/back-end to receive emails.";
     form.reset();
   });
 }
