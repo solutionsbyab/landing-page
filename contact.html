@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Get in touch — Solutions by AB</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="bg" aria-hidden="true"></div>
+  <div class="bgGlow" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <img class="brand__logo" src="assets/logo.png" alt="Solutions by AB logo" />
+      <span class="brand__text">Solutions by AB</span>
+    </a>
+
+    <nav class="nav">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#work">Client Work</a>
+      <a href="index.html#about">How we work</a>
+    </nav>
+
+    <div class="topbar__cta" id="menuWrap">
+      <a class="btn btn--ghost" href="index.html">Back</a>
+
+      <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
+        <span class="burger__lines" aria-hidden="true"></span>
+      </button>
+
+      <div class="dropdown" id="dropdownMenu" hidden>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#work">Client Work</a>
+        <a href="index.html#about">How we work</a>
+        <div class="dropdown__divider"></div>
+        <a class="btn btn--ghost btn--sm" href="index.html">Back to site</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section">
+    <div class="sectionHead">
+      <h1>Get in touch</h1>
+      <p class="muted">Choose the channel that suits you. Fast replies on messaging.</p>
+    </div>
+
+    <div class="contactHub">
+      <a class="hubCard" href="mailto:hello@solutionsbyab.com?subject=Project%20enquiry%20—%20Solutions%20by%20AB">
+        <div class="hubIcon">✉️</div>
+        <div>
+          <div class="hubTitle">Email</div>
+          <div class="hubSub">hello@solutionsbyab.com</div>
+        </div>
+        <div class="hubArrow">→</div>
+      </a>
+
+      <a class="hubCard" href="https://wa.me/447000000000?text=Hi%20Solutions%20by%20AB%20—%20I’d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">
+        <div class="hubIcon">💬</div>
+        <div>
+          <div class="hubTitle">WhatsApp</div>
+          <div class="hubSub">Quickest route</div>
+        </div>
+        <div class="hubArrow">→</div>
+      </a>
+
+      <a class="hubCard" href="https://signal.me/#p/+447000000000" target="_blank" rel="noopener">
+        <div class="hubIcon">🔒</div>
+        <div>
+          <div class="hubTitle">Signal</div>
+          <div class="hubSub">Private messaging</div>
+        </div>
+        <div class="hubArrow">→</div>
+      </a>
+    </div>
+
+    <div class="tiny muted" style="margin-top:18px;">
+      Replace placeholders: WhatsApp number, Signal link, and email address.
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
