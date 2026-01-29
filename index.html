@@ -14,7 +14,6 @@
 </head>
 
 <body>
-  <!-- Background -->
   <div class="bg" aria-hidden="true"></div>
 
   <!-- Header -->
@@ -31,36 +30,37 @@
       <a href="#contact">Contact</a>
     </nav>
 
-    <div class="topbar__cta">
+    <div class="topbar__cta" id="menuWrap">
       <a class="btn btn--ghost" href="#portfolio">View Work</a>
 
-      <!-- Replace WA number -->
       <a class="btn btn--primary"
          href="https://wa.me/447000000000?text=Hi%20Solutions%20by%20AB%20—%20I’d%20like%20to%20discuss%20a%20project."
          target="_blank" rel="noopener">
         Chat on WhatsApp
       </a>
 
-      <button class="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+      <!-- Burger -->
+      <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
+        ☰
+      </button>
+
+      <!-- Dropdown menu (anchored to burger) -->
+      <div class="dropdown" id="dropdownMenu" hidden>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+
+        <div class="dropdown__divider"></div>
+
+        <a class="btn btn--primary btn--sm"
+           href="https://wa.me/447000000000?text=Hi%20Solutions%20by%20AB%20—%20I’d%20like%20to%20discuss%20a%20project."
+           target="_blank" rel="noopener">
+          Chat on WhatsApp
+        </a>
+      </div>
     </div>
   </header>
-
-  <!-- Mobile menu -->
-  <div class="mobileMenu" hidden>
-    <a href="#services">Services</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-
-    <a class="btn btn--primary"
-       href="https://wa.me/447000000000?text=Hi%20Solutions%20by%20AB%20—%20I’d%20like%20to%20discuss%20a%20project."
-       target="_blank" rel="noopener">
-      Chat on WhatsApp
-    </a>
-  </div>
-
-  <!-- Overlay behind mobile menu -->
-  <div class="menuOverlay" hidden></div>
 
   <main id="top">
     <!-- HERO -->
@@ -85,7 +85,6 @@
             Start on WhatsApp
           </a>
 
-          <!-- Replace calendly -->
           <a class="btn btn--ghost"
              href="https://calendly.com/your-link"
              target="_blank" rel="noopener">
@@ -148,17 +147,13 @@
     <section id="services" class="section container">
       <div class="sectionHead reveal">
         <h2>What we do</h2>
-        <p>
-          We build clean, reliable systems that help businesses launch fast and scale without messy operations.
-        </p>
+        <p>We build clean, reliable systems that help businesses launch fast and scale without messy operations.</p>
       </div>
 
       <div class="serviceGrid">
         <article class="serviceCard reveal">
           <h3>Full-Stack Launch Packages</h3>
-          <p>
-            Websites, landing pages, and branded assets that make you look established from day one.
-          </p>
+          <p>Websites, landing pages, and branded assets that make you look established from day one.</p>
           <ul class="bullets">
             <li>Websites & landing pages</li>
             <li>EPK / portfolio pages</li>
@@ -168,9 +163,7 @@
 
         <article class="serviceCard reveal">
           <h3>Pipelines, CRM & Automation</h3>
-          <p>
-            We build workflows that move leads through a proper pipeline — with less admin and more momentum.
-          </p>
+          <p>Workflows that move leads through a proper pipeline — with less admin and more momentum.</p>
           <ul class="bullets">
             <li>Forms → CRM → follow-ups</li>
             <li>Lead routing & tagging</li>
@@ -180,9 +173,7 @@
 
         <article class="serviceCard reveal">
           <h3>Systems & Tech Consulting</h3>
-          <p>
-            If you’re unsure what to build first, we map the stack and plan the next moves like a real team.
-          </p>
+          <p>We map the stack and plan the next moves so scaling stays simple and cost-efficient.</p>
           <ul class="bullets">
             <li>Tooling & architecture planning</li>
             <li>Security-aware setup</li>
@@ -206,9 +197,7 @@
             <span class="workCard__tag">Full-Stack Package</span>
           </div>
           <h3>itsadamharris.com</h3>
-          <p>
-            Full launch pack: website + EPK + domain email setup + radio / industry-ready embeds and links.
-          </p>
+          <p>Full launch pack: website + EPK + domain email + industry-ready embeds and links.</p>
           <div class="workCard__actions">
             <a class="btn btn--ghost btn--sm" href="https://itsadamharris.com" target="_blank" rel="noopener">Visit site</a>
             <a class="btn btn--ghost btn--sm" href="#contact">Get similar</a>
@@ -221,9 +210,7 @@
             <span class="workCard__tag">Property Tech</span>
           </div>
           <h3>Dynamic QR Property Solution</h3>
-          <p>
-            A managed QR system for estate agents: update listing links anytime without reprinting signage.
-          </p>
+          <p>Managed QR codes for listings & signage — update links anytime without reprinting.</p>
           <div class="workCard__actions">
             <a class="btn btn--ghost btn--sm" href="#contact">Enquire</a>
             <a class="btn btn--ghost btn--sm" href="#services">Services</a>
@@ -236,9 +223,7 @@
             <span class="workCard__tag">Scalability</span>
           </div>
           <h3>Business Scalability System</h3>
-          <p>
-            A clean backbone for growth: enquiries → pipeline → CRM → automation → reporting.
-          </p>
+          <p>Enquiries → pipeline → CRM → automation → reporting. A clean backbone for growth.</p>
           <div class="workCard__actions">
             <a class="btn btn--ghost btn--sm" href="#contact">Build this</a>
             <a class="btn btn--ghost btn--sm" href="#services">How it works</a>
@@ -246,9 +231,7 @@
         </article>
       </div>
 
-      <div class="sliderHint reveal">
-        <span class="muted">Tip: swipe / trackpad scroll to browse →</span>
-      </div>
+      <div class="sliderHint reveal"><span class="muted">Tip: swipe / trackpad scroll to browse →</span></div>
     </section>
 
     <!-- ABOUT -->
@@ -256,28 +239,14 @@
       <div class="aboutCard reveal">
         <div>
           <h2>About</h2>
-          <p>
-            Solutions by AB is a systems-building company. We help founders and teams go from “idea” to “operational”
-            with clean delivery: launch packages, CRM pipelines, and automation that scales.
-          </p>
-          <p class="muted">
-            We keep it simple: build what matters, ship it properly, and set you up to grow without chaos.
-          </p>
+          <p>Solutions by AB is a systems-building company. We help founders and teams go from idea to operational — with clean delivery.</p>
+          <p class="muted">Build what matters. Ship it properly. Scale without chaos.</p>
         </div>
 
         <div class="aboutStats">
-          <div class="stat">
-            <div class="stat__num">Launch</div>
-            <div class="stat__label">Premium first impression</div>
-          </div>
-          <div class="stat">
-            <div class="stat__num">Pipeline</div>
-            <div class="stat__label">Leads handled properly</div>
-          </div>
-          <div class="stat">
-            <div class="stat__num">Scale</div>
-            <div class="stat__label">Systems that grow</div>
-          </div>
+          <div class="stat"><div class="stat__num">Launch</div><div class="stat__label">Premium first impression</div></div>
+          <div class="stat"><div class="stat__num">Pipeline</div><div class="stat__label">Leads handled properly</div></div>
+          <div class="stat"><div class="stat__num">Scale</div><div class="stat__label">Systems that grow</div></div>
         </div>
       </div>
     </section>
@@ -305,25 +274,20 @@
             <a class="link" href="https://calendly.com/your-link" target="_blank" rel="noopener">Book a call →</a>
             <a class="link" href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram →</a>
           </div>
-
-          <p class="tiny muted">Pro tip: add your WhatsApp link to your Google Business profile too.</p>
         </div>
 
         <form class="contactForm reveal" id="contactForm">
           <h3>Send an enquiry</h3>
 
-          <label>
-            Name
+          <label>Name
             <input name="name" required placeholder="Your name" />
           </label>
 
-          <label>
-            Email
+          <label>Email
             <input name="email" type="email" required placeholder="you@company.com" />
           </label>
 
-          <label>
-            What do you need?
+          <label>What do you need?
             <select name="service" required>
               <option value="" disabled selected>Select one</option>
               <option>Full-Stack Launch Package</option>
@@ -333,27 +297,21 @@
             </select>
           </label>
 
-          <label>
-            Message
+          <label>Message
             <textarea name="message" rows="5" required placeholder="Tell us what you're building..."></textarea>
           </label>
 
           <button class="btn btn--primary" type="submit">Send enquiry</button>
-
-          <p class="tiny muted" id="formNote">
-            Demo mode: hook this form to Formspree/Netlify or your backend to receive emails.
-          </p>
+          <p class="tiny muted" id="formNote">Demo mode: hook this form to Formspree/Netlify or your backend to receive emails.</p>
         </form>
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer container">
       <div class="footer__left">
         <div class="footer__brand">Solutions by AB</div>
         <div class="tiny muted">Technology. Tailored.</div>
       </div>
-
       <div class="footer__right">
         <a class="link" href="#services">Services</a>
         <a class="link" href="#portfolio">Portfolio</a>
@@ -361,7 +319,6 @@
       </div>
     </footer>
 
-    <!-- Floating WhatsApp button -->
     <a class="fab"
        href="https://wa.me/447000000000?text=Hi%20Solutions%20by%20AB%20—%20I’d%20like%20to%20discuss%20a%20project."
        target="_blank" rel="noopener"
