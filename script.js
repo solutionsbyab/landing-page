@@ -1,45 +1,42 @@
-// Mobile menu (iPhone-safe)
-const burger = document.querySelector(".burger");
-const mobileMenu = document.querySelector(".mobileMenu");
-const menuOverlay = document.querySelector(".menuOverlay");
+const burgerBtn = document.getElementById("burgerBtn");
+const dropdownMenu = document.getElementById("dropdownMenu");
+const menuWrap = document.getElementById("menuWrap");
 
-function openMenu() {
-  if (!burger || !mobileMenu || !menuOverlay) return;
-  burger.setAttribute("aria-expanded", "true");
-  mobileMenu.hidden = false;
-  menuOverlay.hidden = false;
+function openDropdown() {
+  burgerBtn.setAttribute("aria-expanded", "true");
+  dropdownMenu.hidden = false;
 }
 
-function closeMenu() {
-  if (!burger || !mobileMenu || !menuOverlay) return;
-  burger.setAttribute("aria-expanded", "false");
-  mobileMenu.hidden = true;
-  menuOverlay.hidden = true;
+function closeDropdown() {
+  burgerBtn.setAttribute("aria-expanded", "false");
+  dropdownMenu.hidden = true;
 }
 
-if (burger && mobileMenu && menuOverlay) {
-  burger.addEventListener("click", () => {
-    const isOpen = burger.getAttribute("aria-expanded") === "true";
-    isOpen ? closeMenu() : openMenu();
+if (burgerBtn && dropdownMenu && menuWrap) {
+  burgerBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = burgerBtn.getAttribute("aria-expanded") === "true";
+    isOpen ? closeDropdown() : openDropdown();
   });
 
-  // Close when tapping outside the menu
-  menuOverlay.addEventListener("click", closeMenu);
-
-  // Close when clicking any link in the menu
-  mobileMenu.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", closeMenu);
+  // Close if user clicks anywhere outside the dropdown
+  document.addEventListener("click", (e) => {
+    const clickedInside = menuWrap.contains(e.target);
+    if (!clickedInside) closeDropdown();
   });
 
-  // Close if user swipes/scrolls anywhere (iOS reliable)
-  window.addEventListener("touchmove", () => {
-    if (burger.getAttribute("aria-expanded") === "true") closeMenu();
-  }, { passive: true });
+  // Close when user taps a dropdown link
+  dropdownMenu.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => closeDropdown());
+  });
+
+  // Close on scroll/touch move (mobile safari)
+  window.addEventListener("scroll", closeDropdown, { passive: true });
+  window.addEventListener("touchmove", closeDropdown, { passive: true });
 }
 
 // Slide-in reveal on scroll
 const revealEls = document.querySelectorAll(".reveal");
-
 if ("IntersectionObserver" in window) {
   const obs = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -49,10 +46,9 @@ if ("IntersectionObserver" in window) {
       }
     });
   }, { threshold: 0.12 });
-
-  revealEls.forEach(el => obs.observe(el));
+  revealEls.forEach((el) => obs.observe(el));
 } else {
-  revealEls.forEach(el => el.classList.add("is-visible"));
+  revealEls.forEach((el) => el.classList.add("is-visible"));
 }
 
 // Demo contact form (replace with Formspree/Netlify/backend)
