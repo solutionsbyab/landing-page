@@ -300,3 +300,82 @@ body{
   .brand__text{font-size:16px}
   .brand__logo{width:40px;height:40px}
 }
+/* CONTACT PAGE */
+.contactGrid{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+}
+
+.contactCard{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:16px;
+  border-radius:18px;
+  background: rgba(255,255,255,0.045);
+  border:1px solid rgba(255,255,255,0.09);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+  text-decoration:none;
+  color:#fff;
+  transition: .16s ease;
+}
+
+.contactCard:hover{
+  transform: translateY(-1px);
+  border-color: rgba(46,211,199,0.25);
+}
+
+.contactIcon{
+  width:52px;
+  height:52px;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.18);
+  flex:0 0 auto;
+}
+
+.contactIcon svg{
+  width:26px;
+  height:26px;
+  color:#fff;
+}
+
+.contactIcon--email{ border-color: rgba(255,255,255,0.16); }
+.contactIcon--wa{ border-color: rgba(46,211,199,0.35); }
+.contactIcon--signal{ border-color: rgba(120,170,255,0.35); }
+
+.contactText{ min-width:0; }
+.contactTitle{
+  font-weight:900;
+  font-size:16px;
+  letter-spacing:.2px;
+}
+
+.contactValue{
+  font-weight:900;   /* bold as requested */
+  margin-top:2px;
+  font-size:14px;
+  color: rgba(255,255,255,0.92);
+  word-break: break-word;
+}
+
+.contactNote{
+  margin-top:4px;
+  font-size:12px;
+  color: rgba(255,255,255,0.65);
+  font-weight:700;
+}
+
+.contactArrow{
+  margin-left:auto;
+  font-weight:900;
+  font-size:18px;
+  opacity:.85;
+}
+
