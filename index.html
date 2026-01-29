@@ -1,138 +1,236 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Solutions by AB — Technology, Tailored</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Solutions by AB — Technology. Tailored. Full-stack launches, CRM pipelines, and automation systems." />
+  <title>Solutions by AB — Technology. Tailored.</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <div class="bg"></div>
+  <div class="bg" aria-hidden="true"></div>
+  <div class="bgGlow" aria-hidden="true"></div>
 
   <!-- HEADER -->
   <header class="topbar">
-    <a class="brand" href="#">
-      <img src="assets/logo.png" class="brand__logo" alt="Solutions by AB" />
+    <a class="brand" href="#top" aria-label="Solutions by AB home">
+      <img class="brand__logo" src="assets/logo.png" alt="Solutions by AB logo" />
       <span class="brand__text">Solutions by AB</span>
     </a>
 
     <nav class="nav">
+      <a href="#services">Services</a>
       <a href="#work">Client Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="#about">How we work</a>
+      <a href="contact.html">Get in touch</a>
     </nav>
 
-    <div class="topbar__cta">
-      <a class="btn btn--primary btn--sm" href="https://wa.me/447000000000">WhatsApp</a>
-      <button class="burger" id="menuBtn">☰</button>
+    <div class="topbar__cta" id="menuWrap">
+      <a class="btn btn--ghost" href="#work">Client Work</a>
+      <a class="btn btn--primary" href="contact.html">Get in touch</a>
 
-      <div class="dropdown" id="menu" hidden>
+      <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
+        <span class="burger__lines" aria-hidden="true"></span>
+      </button>
+
+      <div class="dropdown" id="dropdownMenu" hidden>
+        <a href="#services">Services</a>
         <a href="#work">Client Work</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="#about">How we work</a>
         <div class="dropdown__divider"></div>
-        <a class="btn btn--primary btn--sm" href="https://wa.me/447000000000">Chat on WhatsApp</a>
+        <a class="btn btn--primary btn--sm" href="contact.html">Get in touch</a>
       </div>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero container">
-    <div>
-      <div class="hero__tag">UK-based • Full-stack delivery</div>
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero container">
+      <div class="hero__left reveal">
+        <div class="hero__tag">Systems • Full-stack • Automation</div>
 
-      <h1 class="hero__title">
-        <span class="hero__titleLine">Systems built</span>
-        <span class="hero__titleLine accent">to scale operations</span>
-      </h1>
+        <h1 class="hero__title">
+          <span class="hero__titleLine">Solutions by AB</span>
+          <span class="hero__titleLine accent">Technology. Tailored.</span>
+        </h1>
 
-      <p class="hero__sub">
-        We design and deliver practical digital systems — from full-stack
-        launch packages to CRM pipelines and workflow automation that keep
-        businesses clean as they grow.
-      </p>
+        <p class="hero__sub">
+          We build the systems behind growing businesses —
+          from full-stack launches to CRM pipelines and automation that keeps operations clean as you scale.
+        </p>
 
-      <div class="hero__buttons">
-        <a class="btn btn--primary" href="https://wa.me/447000000000">Start a Project</a>
-      </div>
+        <div class="hero__buttons">
+          <a class="btn btn--primary btn--glow" href="contact.html">Get in touch</a>
+          <a class="btn btn--ghost" href="#work">See client work</a>
+        </div>
 
-      <div class="hero__trust">
-        <span>Startup → Scale</span>
-        <span class="trustDot"></span>
-        <span>Clean delivery</span>
-        <span class="trustDot"></span>
-        <span>Long-term systems</span>
-      </div>
-    </div>
-
-    <!-- DELIVERY SNAPSHOT -->
-    <div class="showcase" id="work">
-      <div class="showcase__head">
-        <span class="dot teal"></span>
-        <span class="dot amber"></span>
-        <span class="dot blue"></span>
-        <span class="showcase__title">Delivery Snapshot</span>
-      </div>
-
-      <div class="showRow">
-        <div class="statusPill statusPill--live"><span>Delivered</span></div>
-        <div>
-          <h3>itsadamharris.com — Full Launch Pack</h3>
-          <p>Website, EPK, domain email, industry-ready embeds and links.</p>
-          <a class="link" href="https://itsadamharris.com" target="_blank">Visit site →</a>
+        <div class="hero__trust">
+          <span class="trustItem">UK-based</span>
+          <span class="trustDot"></span>
+          <span class="trustItem">Full-stack delivery</span>
+          <span class="trustDot"></span>
+          <span class="trustItem">Startup → Scale</span>
         </div>
       </div>
 
-      <div class="showRow">
-        <div class="statusPill statusPill--progress"><span>In Progress</span></div>
-        <div>
-          <h3>Dynamic QR Property Solution</h3>
-          <p>Managed QR codes for listings & signage — update links anytime.</p>
+      <!-- DELIVERY SNAPSHOT (wider + scrollable) -->
+      <div class="hero__right reveal" id="work">
+        <div class="snapWrap">
+          <div class="snapTitleRow">
+            <div class="snapKicker">Delivery Snapshot</div>
+            <div class="snapHint">Swipe →</div>
+          </div>
+
+          <div class="snapScroller" aria-label="Delivery Snapshot scroller">
+            <!-- CARD 1 -->
+            <article class="snapCard">
+              <div class="snapTop">
+                <span class="dot dot--ok"></span>
+                <span class="dot dot--warn"></span>
+                <span class="dot dot--info"></span>
+                <span class="snapTop__label">Delivered</span>
+              </div>
+
+              <div class="snapRow">
+                <div class="statusPill statusPill--live"><span>Delivered</span></div>
+                <div class="snapText">
+                  <h3>itsadamharris.com — Full Launch Pack</h3>
+                  <p>Website + EPK + domain email + industry-ready embeds & links.</p>
+                  <a class="link" href="https://itsadamharris.com" target="_blank" rel="noopener">Visit site →</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- CARD 2 -->
+            <article class="snapCard">
+              <div class="snapTop">
+                <span class="dot dot--ok"></span>
+                <span class="dot dot--warn"></span>
+                <span class="dot dot--info"></span>
+                <span class="snapTop__label">In Progress</span>
+              </div>
+
+              <div class="snapRow">
+                <div class="statusPill statusPill--progress"><span>In Progress</span></div>
+                <div class="snapText">
+                  <h3>Dynamic QR Property Solution</h3>
+                  <p>Managed QR codes for listings & signage — update links anytime.</p>
+                  <a class="link" href="contact.html">Enquire →</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- CARD 3 -->
+            <article class="snapCard">
+              <div class="snapTop">
+                <span class="dot dot--ok"></span>
+                <span class="dot dot--warn"></span>
+                <span class="dot dot--info"></span>
+                <span class="snapTop__label">Concept</span>
+              </div>
+
+              <div class="snapRow">
+                <div class="statusPill statusPill--concept"><span>Concept</span></div>
+                <div class="snapText">
+                  <h3>Business Scalability System</h3>
+                  <p>Enquiries → pipeline → CRM → automation → reporting.</p>
+                  <a class="link" href="contact.html">Build this →</a>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="showRow">
-        <div class="statusPill statusPill--concept"><span>Concept</span></div>
-        <div>
-          <h3>Business Scalability System</h3>
-          <p>Enquiries → pipeline → CRM → automation → reporting.</p>
+    <!-- SERVICES -->
+    <section id="services" class="section container">
+      <div class="sectionHead reveal">
+        <h2>What we deliver</h2>
+        <p>
+          A full-stack package for founders and teams — from launch and branding to internal systems that run the business.
+        </p>
+      </div>
+
+      <div class="serviceGrid">
+        <article class="serviceCard reveal">
+          <h3>Launch & Presence</h3>
+          <p>High-trust websites and landing pages built to convert and look premium.</p>
+          <ul class="bullets">
+            <li>Landing pages & websites</li>
+            <li>EPK / portfolio builds</li>
+            <li>Email + domain setup</li>
+          </ul>
+        </article>
+
+        <article class="serviceCard reveal">
+          <h3>CRM & Pipelines</h3>
+          <p>Enquiries turn into a clean pipeline — tracked, organised, and scalable.</p>
+          <ul class="bullets">
+            <li>Forms → CRM → follow-ups</li>
+            <li>Lead routing & tagging</li>
+            <li>Dashboards & reporting</li>
+          </ul>
+        </article>
+
+        <article class="serviceCard reveal">
+          <h3>Automation & Integrations</h3>
+          <p>Reduce admin. Speed up delivery. Keep the team focused on revenue work.</p>
+          <ul class="bullets">
+            <li>Notifications & reminders</li>
+            <li>WhatsApp + email workflows</li>
+            <li>Tool integration strategy</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- HOW WE WORK -->
+    <section id="about" class="section container">
+      <div class="aboutCard reveal">
+        <div class="aboutCopy">
+          <h2>How we work</h2>
+          <p>
+            We build systems the way an operator would — not just “a nice website”.
+            We map your flow end-to-end: enquiry → pipeline → fulfilment → retention.
+          </p>
+          <p class="muted">
+            Typical outcomes: faster response times, less manual admin, cleaner handovers,
+            and visibility across sales + delivery.
+          </p>
+        </div>
+
+        <div class="aboutStats">
+          <div class="stat">
+            <div class="stat__num">01</div>
+            <div class="stat__label">Discovery + system mapping</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">02</div>
+            <div class="stat__label">Build + integrate</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">03</div>
+            <div class="stat__label">Automate + handover</div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ABOUT -->
-  <section class="section container" id="about">
-    <h2>How we work</h2>
-    <p class="muted">
-      We’re not a template agency. We build systems with intent — choosing the
-      right stack, simplifying complexity, and delivering tools businesses
-      can actually run with.
-    </p>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section container" id="contact">
-    <h2>Start a conversation</h2>
-    <p class="muted">
-      If you’re planning a launch, rebuilding operations, or tightening
-      internal workflows, let’s talk.
-    </p>
-
-    <a class="btn btn--primary" href="https://wa.me/447000000000">
-      Chat on WhatsApp
-    </a>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer container">
-    <span>© Solutions by AB</span>
-    <span class="muted">UK • Systems & delivery</span>
-  </footer>
-
-  <!-- FLOATING WHATSAPP -->
-  <a class="fab" href="https://wa.me/447000000000">💬</a>
+    <!-- FOOTER -->
+    <footer class="footer container">
+      <div>
+        <div class="footer__brand">Solutions by AB</div>
+        <div class="tiny muted">Technology. Tailored.</div>
+      </div>
+      <div class="footerLinks">
+        <a class="link" href="#services">Services</a>
+        <a class="link" href="#work">Client Work</a>
+        <a class="link" href="contact.html">Get in touch</a>
+      </div>
+    </footer>
+  </main>
 
   <script src="script.js"></script>
 </body>
