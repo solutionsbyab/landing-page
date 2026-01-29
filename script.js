@@ -1,62 +1,71 @@
-// Mobile menu
+// Mobile menu (iPhone-safe)
 const burger = document.querySelector(".burger");
 const mobileMenu = document.querySelector(".mobileMenu");
+const menuOverlay = document.querySelector(".menuOverlay");
 
-if (burger && mobileMenu) {
-  burger.addEventListener("click", () => {
-    const isOpen = burger.getAttribute("aria-expanded") === "true";
-    burger.setAttribute("aria-expanded", String(!isOpen));
-    mobileMenu.hidden = isOpen;
-  });
-
-  // Close menu on link click
-  mobileMenu.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", () => {
-      burger.setAttribute("aria-expanded", "false");
-      mobileMenu.hidden = true;
-    });
-  });
+function openMenu() {
+  if (!burger || !mobileMenu || !menuOverlay) return;
+  burger.setAttribute("aria-expanded", "true");
+  mobileMenu.hidden = false;
+  menuOverlay.hidden = false;
 }
 
-// Demo contact form (replace with real endpoint)
+function closeMenu() {
+  if (!burger || !mobileMenu || !menuOverlay) return;
+  burger.setAttribute("aria-expanded", "false");
+  mobileMenu.hidden = true;
+  menuOverlay.hidden = true;
+}
+
+if (burger && mobileMenu && menuOverlay) {
+  burger.addEventListener("click", () => {
+    const isOpen = burger.getAttribute("aria-expanded") === "true";
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  // Close when tapping outside the menu
+  menuOverlay.addEventListener("click", closeMenu);
+
+  // Close when clicking any link in the menu
+  mobileMenu.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", closeMenu);
+  });
+
+  // Close if user swipes/scrolls anywhere (iOS reliable)
+  window.addEventListener("touchmove", () => {
+    if (burger.getAttribute("aria-expanded") === "true") closeMenu();
+  }, { passive: true });
+}
+
+// Slide-in reveal on scroll
+const revealEls = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealEls.forEach(el => obs.observe(el));
+} else {
+  revealEls.forEach(el => el.classList.add("is-visible"));
+}
+
+// Demo contact form (replace with Formspree/Netlify/backend)
 const form = document.getElementById("contactForm");
 const formNote = document.getElementById("formNote");
 
 if (form) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-
-    // OPTION 1 (simple): mailto (opens user's email client)
-    // const data = new FormData(form);
-    // const subject = encodeURIComponent("New enquiry — Solutions by AB");
-    // const body = encodeURIComponent(
-    //   `Name: ${data.get("name")}\nEmail: ${data.get("email")}\nService: ${data.get("service")}\n\nMessage:\n${data.get("message")}`
-    // );
-    // window.location.href = `mailto:you@yourdomain.com?subject=${subject}&body=${body}`;
-
-    // OPTION 2 (recommended): Formspree / Netlify Forms / your backend
-    // - Formspree: add action="https://formspree.io/f/xxxxx" method="POST" to the form in HTML
-    // - Netlify: add netlify attribute + hidden input name="form-name"
-    // Then remove this preventDefault.
-
     if (formNote) {
-      formNote.textContent = "Received (demo). Hook this form to Formspree/Netlify or your backend to make it live.";
+      formNote.textContent =
+        "Received (demo). Connect this form to Formspree/Netlify or your backend to receive emails.";
     }
     form.reset();
   });
 }
-// Close mobile menu if user scrolls (prevents it staying open)
-let lastY = window.scrollY;
-
-window.addEventListener("scroll", () => {
-  if (!burger || !mobileMenu) return;
-
-  const isOpen = burger.getAttribute("aria-expanded") === "true";
-  if (!isOpen) return;
-
-  if (Math.abs(window.scrollY - lastY) > 10) {
-    burger.setAttribute("aria-expanded", "false");
-    mobileMenu.hidden = true;
-  }
-  lastY = window.scrollY;
-}, { passive: true });
