@@ -3,25 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Solutions by AB — Technology. Tailored. Websites, automation, and digital systems for modern businesses." />
+  <meta name="description" content="Solutions by AB — Technology. Tailored. Full-stack builds, CRM pipelines and automation for growing businesses." />
   <title>Solutions by AB — Technology. Tailored.</title>
 
-  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- Background overlay (circuit image + gradient) -->
+  <!-- Background -->
   <div class="bg" aria-hidden="true"></div>
 
-  <!-- Top Bar -->
+  <!-- Header -->
   <header class="topbar">
     <a class="brand" href="#top" aria-label="Solutions by AB home">
-      <!-- Replace with your logo path -->
       <img class="brand__logo" src="assets/logo.png" alt="Solutions by AB logo" />
       <span class="brand__text">Solutions by AB</span>
     </a>
@@ -35,10 +33,14 @@
 
     <div class="topbar__cta">
       <a class="btn btn--ghost" href="#portfolio">View Work</a>
-      <a class="btn btn--primary" id="whatsappTop" href="https://wa.me/447000000000?text=Hi%20Solutions%20by%20AB%20—%20I’d%20like%20to%20discuss%20a%20project."
+
+      <!-- Replace WA number -->
+      <a class="btn btn--primary"
+         href="https://wa.me/447000000000?text=Hi%20Solutions%20by%20AB%20—%20I’d%20like%20to%20discuss%20a%20project."
          target="_blank" rel="noopener">
         Chat on WhatsApp
       </a>
+
       <button class="burger" aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
   </header>
@@ -49,32 +51,41 @@
     <a href="#portfolio">Portfolio</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
-    <a class="btn btn--primary" href="https://wa.me/447000000000?text=Hi%20Solutions%20by%20AB%20—%20I’d%20like%20to%20discuss%20a%20project."
-       target="_blank" rel="noopener">Chat on WhatsApp</a>
+
+    <a class="btn btn--primary"
+       href="https://wa.me/447000000000?text=Hi%20Solutions%20by%20AB%20—%20I’d%20like%20to%20discuss%20a%20project."
+       target="_blank" rel="noopener">
+      Chat on WhatsApp
+    </a>
   </div>
+
+  <!-- Overlay behind mobile menu -->
+  <div class="menuOverlay" hidden></div>
 
   <main id="top">
     <!-- HERO -->
     <section class="hero container">
-      <div class="hero__left">
-        <p class="pill">Technology • Automation • Digital Systems</p>
-        <h1>
-          Solutions by AB<br />
-          <span class="accent">Technology. Tailored.</span>
+      <div class="hero__left reveal">
+        <div class="hero__tag">Systems • Full-Stack • Automation</div>
+
+        <h1 class="hero__title">
+          <span class="hero__titleLine">Solutions by AB</span>
+          <span class="hero__titleLine accent">Technology. Tailored.</span>
         </h1>
+
         <p class="hero__sub">
-          We build modern landing pages, smart business systems, and automation that help teams move faster with less chaos.
+          We build the systems behind growing businesses — from full-stack websites and launch packages
+          to CRM pipelines and automation that keep operations clean as you scale.
         </p>
 
         <div class="hero__buttons">
-          <!-- Replace WA number -->
           <a class="btn btn--primary btn--glow"
              href="https://wa.me/447000000000?text=Hi%20Solutions%20by%20AB%20—%20I’d%20like%20to%20discuss%20a%20project."
              target="_blank" rel="noopener">
-            Start a Project on WhatsApp
+            Start on WhatsApp
           </a>
 
-          <!-- Replace with your calendly link -->
+          <!-- Replace calendly -->
           <a class="btn btn--ghost"
              href="https://calendly.com/your-link"
              target="_blank" rel="noopener">
@@ -82,59 +93,52 @@
           </a>
         </div>
 
-        <div class="hero__meta">
-          <div class="metaCard">
-            <div class="metaCard__kpi">Fast Turnaround</div>
-            <div class="metaCard__label">Lean builds, premium finish</div>
-          </div>
-          <div class="metaCard">
-            <div class="metaCard__kpi">Systems Mindset</div>
-            <div class="metaCard__label">Less noise, more output</div>
-          </div>
-          <div class="metaCard">
-            <div class="metaCard__kpi">Secure & Scalable</div>
-            <div class="metaCard__label">Built for growth</div>
-          </div>
+        <div class="hero__trust">
+          <span class="trustItem">UK-based</span>
+          <span class="trustDot"></span>
+          <span class="trustItem">Full-stack delivery</span>
+          <span class="trustDot"></span>
+          <span class="trustItem">Startup → Scale</span>
         </div>
       </div>
 
-      <div class="hero__right">
-        <div class="heroCard glass">
-          <div class="heroCard__top">
+      <div class="hero__right reveal">
+        <div class="showcase">
+          <div class="showcase__top">
             <span class="dot dot--ok"></span>
             <span class="dot dot--warn"></span>
             <span class="dot dot--info"></span>
-            <span class="heroCard__title">Project Pipeline</span>
+            <span class="showcase__title">Delivery Snapshot</span>
           </div>
 
-          <div class="pipeline">
-            <div class="pipelineItem">
-              <span class="badge badge--live">Live</span>
-              <div>
-                <div class="pipelineItem__name">Artist Landing Page</div>
-                <div class="pipelineItem__desc">Social links + video embeds + release-ready CTA</div>
+          <div class="showcase__list">
+            <div class="showRow">
+              <span class="badge badge--live">Delivered</span>
+              <div class="showText">
+                <div class="showName">itsadamharris.com — Full Launch Pack</div>
+                <div class="showDesc">Website + EPK + domain email + industry-ready embeds & links</div>
               </div>
             </div>
 
-            <div class="pipelineItem">
+            <div class="showRow">
               <span class="badge badge--progress">In Progress</span>
-              <div>
-                <div class="pipelineItem__name">QR Property Tech</div>
-                <div class="pipelineItem__desc">Dynamic QR management for listings & signage</div>
+              <div class="showText">
+                <div class="showName">Dynamic QR Property Solution</div>
+                <div class="showDesc">Managed QR codes for listings & signage — update links anytime</div>
               </div>
             </div>
 
-            <div class="pipelineItem">
+            <div class="showRow">
               <span class="badge badge--concept">Concept</span>
-              <div>
-                <div class="pipelineItem__name">AI Workflow Tool</div>
-                <div class="pipelineItem__desc">Automation for admin, docs, and ops</div>
+              <div class="showText">
+                <div class="showName">Business Scalability System</div>
+                <div class="showDesc">Enquiries → pipeline → CRM → automation → reporting</div>
               </div>
             </div>
           </div>
 
-          <div class="heroCard__footer">
-            <a class="link" href="#portfolio">View full portfolio →</a>
+          <div class="showcase__footer">
+            <a class="link" href="#portfolio">View portfolio →</a>
           </div>
         </div>
       </div>
@@ -142,39 +146,47 @@
 
     <!-- SERVICES -->
     <section id="services" class="section container">
-      <div class="sectionHead">
+      <div class="sectionHead reveal">
         <h2>What we do</h2>
-        <p>Clean builds. Smart systems. Strong delivery.</p>
+        <p>
+          We build clean, reliable systems that help businesses launch fast and scale without messy operations.
+        </p>
       </div>
 
-      <div class="grid3">
-        <article class="card glass">
-          <h3>Digital Solutions</h3>
-          <p>Landing pages, websites, and branded online presence that converts visitors into clients.</p>
+      <div class="serviceGrid">
+        <article class="serviceCard reveal">
+          <h3>Full-Stack Launch Packages</h3>
+          <p>
+            Websites, landing pages, and branded assets that make you look established from day one.
+          </p>
           <ul class="bullets">
-            <li>Modern UI</li>
-            <li>Mobile-first</li>
-            <li>Fast hosting</li>
+            <li>Websites & landing pages</li>
+            <li>EPK / portfolio pages</li>
+            <li>Launch-ready links & embeds</li>
           </ul>
         </article>
 
-        <article class="card glass">
-          <h3>Automation & CRM</h3>
-          <p>Workflows and integrations that remove repetitive tasks and unlock scale.</p>
+        <article class="serviceCard reveal">
+          <h3>Pipelines, CRM & Automation</h3>
+          <p>
+            We build workflows that move leads through a proper pipeline — with less admin and more momentum.
+          </p>
           <ul class="bullets">
-            <li>Forms → CRM</li>
-            <li>Lead routing</li>
-            <li>AI-assisted ops</li>
+            <li>Forms → CRM → follow-ups</li>
+            <li>Lead routing & tagging</li>
+            <li>Automation to remove repeat tasks</li>
           </ul>
         </article>
 
-        <article class="card glass">
-          <h3>Tech Consulting</h3>
-          <p>Practical guidance on tooling, security, and systems—so you build the right stack.</p>
+        <article class="serviceCard reveal">
+          <h3>Systems & Tech Consulting</h3>
+          <p>
+            If you’re unsure what to build first, we map the stack and plan the next moves like a real team.
+          </p>
           <ul class="bullets">
-            <li>Roadmaps</li>
+            <li>Tooling & architecture planning</li>
             <li>Security-aware setup</li>
-            <li>Cost control</li>
+            <li>Cost-efficient scaling</li>
           </ul>
         </article>
       </div>
@@ -182,93 +194,89 @@
 
     <!-- PORTFOLIO -->
     <section id="portfolio" class="section container">
-      <div class="sectionHead">
+      <div class="sectionHead reveal">
         <h2>Portfolio</h2>
-        <p>Ongoing and completed builds. Proof over promises.</p>
+        <p>Delivered work + builds in progress. Proof, not noise.</p>
       </div>
 
-      <div class="portfolioGrid">
-        <!-- Card -->
-        <article class="workCard glass">
+      <div class="portfolioRow reveal" aria-label="Portfolio slider">
+        <article class="workCard">
           <div class="workCard__top">
-            <span class="badge badge--live">Live</span>
-            <span class="workCard__tag">Landing Page</span>
+            <span class="badge badge--live">Delivered</span>
+            <span class="workCard__tag">Full-Stack Package</span>
           </div>
-          <h3>Artist Landing Page</h3>
-          <p>Release-ready landing page with Spotify, Apple Music, YouTube embeds, and social CTAs.</p>
+          <h3>itsadamharris.com</h3>
+          <p>
+            Full launch pack: website + EPK + domain email setup + radio / industry-ready embeds and links.
+          </p>
           <div class="workCard__actions">
-            <a class="btn btn--ghost btn--sm" href="#" target="_blank" rel="noopener">Preview</a>
-            <a class="btn btn--ghost btn--sm" href="#" target="_blank" rel="noopener">Case Study</a>
+            <a class="btn btn--ghost btn--sm" href="https://itsadamharris.com" target="_blank" rel="noopener">Visit site</a>
+            <a class="btn btn--ghost btn--sm" href="#contact">Get similar</a>
           </div>
         </article>
 
-        <article class="workCard glass">
+        <article class="workCard">
           <div class="workCard__top">
             <span class="badge badge--progress">In Progress</span>
             <span class="workCard__tag">Property Tech</span>
           </div>
-          <h3>Dynamic QR Property System</h3>
-          <p>Manage and swap links without reprinting. Designed for estate agents & signage.</p>
-          <div class="workCard__actions">
-            <a class="btn btn--ghost btn--sm" href="#" target="_blank" rel="noopener">Prototype</a>
-            <a class="btn btn--ghost btn--sm" href="#" target="_blank" rel="noopener">Roadmap</a>
-          </div>
-        </article>
-
-        <article class="workCard glass">
-          <div class="workCard__top">
-            <span class="badge badge--concept">Concept</span>
-            <span class="workCard__tag">Automation</span>
-          </div>
-          <h3>AI Workflow Tool</h3>
-          <p>Automates admin, document handling, and internal comms summarisation for teams.</p>
-          <div class="workCard__actions">
-            <a class="btn btn--ghost btn--sm" href="#" target="_blank" rel="noopener">Specs</a>
-            <a class="btn btn--ghost btn--sm" href="#" target="_blank" rel="noopener">Coming Soon</a>
-          </div>
-        </article>
-
-        <article class="workCard glass">
-          <div class="workCard__top">
-            <span class="badge badge--progress">In Progress</span>
-            <span class="workCard__tag">Brand + Web</span>
-          </div>
-          <h3>Solutions by AB Core Site</h3>
-          <p>Brand-led landing page + portfolio pipeline. Designed for credibility and conversion.</p>
+          <h3>Dynamic QR Property Solution</h3>
+          <p>
+            A managed QR system for estate agents: update listing links anytime without reprinting signage.
+          </p>
           <div class="workCard__actions">
             <a class="btn btn--ghost btn--sm" href="#contact">Enquire</a>
             <a class="btn btn--ghost btn--sm" href="#services">Services</a>
           </div>
         </article>
+
+        <article class="workCard">
+          <div class="workCard__top">
+            <span class="badge badge--concept">Concept</span>
+            <span class="workCard__tag">Scalability</span>
+          </div>
+          <h3>Business Scalability System</h3>
+          <p>
+            A clean backbone for growth: enquiries → pipeline → CRM → automation → reporting.
+          </p>
+          <div class="workCard__actions">
+            <a class="btn btn--ghost btn--sm" href="#contact">Build this</a>
+            <a class="btn btn--ghost btn--sm" href="#services">How it works</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="sliderHint reveal">
+        <span class="muted">Tip: swipe / trackpad scroll to browse →</span>
       </div>
     </section>
 
     <!-- ABOUT -->
     <section id="about" class="section container">
-      <div class="about glass">
+      <div class="aboutCard reveal">
         <div>
           <h2>About</h2>
           <p>
-            Solutions by AB is an upcoming tech company focused on modern digital infrastructure:
-            clean web builds, automation, and systems that scale.
+            Solutions by AB is a systems-building company. We help founders and teams go from “idea” to “operational”
+            with clean delivery: launch packages, CRM pipelines, and automation that scales.
           </p>
           <p class="muted">
-            We ship fast, document properly, and design like your brand is already bigger than today (because it will be).
+            We keep it simple: build what matters, ship it properly, and set you up to grow without chaos.
           </p>
         </div>
 
-        <div class="about__stats">
+        <div class="aboutStats">
           <div class="stat">
-            <div class="stat__num">UI</div>
-            <div class="stat__label">Clean & sleek</div>
+            <div class="stat__num">Launch</div>
+            <div class="stat__label">Premium first impression</div>
           </div>
           <div class="stat">
-            <div class="stat__num">Ops</div>
-            <div class="stat__label">Automation-first</div>
+            <div class="stat__num">Pipeline</div>
+            <div class="stat__label">Leads handled properly</div>
           </div>
           <div class="stat">
-            <div class="stat__num">Trust</div>
-            <div class="stat__label">Business-ready</div>
+            <div class="stat__num">Scale</div>
+            <div class="stat__label">Systems that grow</div>
           </div>
         </div>
       </div>
@@ -276,15 +284,15 @@
 
     <!-- CONTACT -->
     <section id="contact" class="section container">
-      <div class="sectionHead">
+      <div class="sectionHead reveal">
         <h2>Contact</h2>
-        <p>Pick your preferred lane. We respond fast.</p>
+        <p>Fastest route is WhatsApp. For formal enquiries, use the form.</p>
       </div>
 
       <div class="contactGrid">
-        <div class="glass contactLeft">
-          <h3>Fastest route</h3>
-          <p class="muted">WhatsApp Business is the quickest way to start.</p>
+        <div class="contactLeft reveal">
+          <h3>Start a project</h3>
+          <p class="muted">Message us on WhatsApp Business and we’ll reply quickly.</p>
 
           <a class="btn btn--primary btn--glow"
              href="https://wa.me/447000000000?text=Hi%20Solutions%20by%20AB%20—%20I’d%20like%20to%20discuss%20a%20project."
@@ -293,20 +301,17 @@
           </a>
 
           <div class="contactLinks">
-            <!-- Replace links -->
             <a class="link" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn →</a>
             <a class="link" href="https://calendly.com/your-link" target="_blank" rel="noopener">Book a call →</a>
             <a class="link" href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram →</a>
           </div>
 
-          <p class="tiny muted">Pro tip: add your WhatsApp “Click to Chat” link on your Google Business profile too.</p>
+          <p class="tiny muted">Pro tip: add your WhatsApp link to your Google Business profile too.</p>
         </div>
 
-        <form class="glass contactForm" id="contactForm">
-          <h3>Send a message</h3>
+        <form class="contactForm reveal" id="contactForm">
+          <h3>Send an enquiry</h3>
 
-          <!-- Option A: Use Formspree / Netlify Forms / your backend.
-               Replace action with your endpoint. -->
           <label>
             Name
             <input name="name" required placeholder="Your name" />
@@ -321,9 +326,9 @@
             What do you need?
             <select name="service" required>
               <option value="" disabled selected>Select one</option>
-              <option>Landing Page / Website</option>
-              <option>Automation / CRM</option>
-              <option>Consulting</option>
+              <option>Full-Stack Launch Package</option>
+              <option>Pipelines / CRM / Automation</option>
+              <option>Consulting / Planning</option>
               <option>Other</option>
             </select>
           </label>
@@ -334,14 +339,15 @@
           </label>
 
           <button class="btn btn--primary" type="submit">Send enquiry</button>
+
           <p class="tiny muted" id="formNote">
-            This form is currently set to “demo mode” (it won’t email yet). See instructions in <code>script.js</code>.
+            Demo mode: hook this form to Formspree/Netlify or your backend to receive emails.
           </p>
         </form>
       </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- Footer -->
     <footer class="footer container">
       <div class="footer__left">
         <div class="footer__brand">Solutions by AB</div>
@@ -363,10 +369,6 @@
       💬
     </a>
   </main>
-
-  <!-- Optional: Live chat widget (Tawk.to / Crisp / Intercom etc.)
-       Paste their script here -->
-  <!-- <script>/* Live chat embed */</script> -->
 
   <script src="script.js"></script>
 </body>
