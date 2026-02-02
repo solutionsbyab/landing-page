@@ -72,14 +72,23 @@
     let scrollLeft = 0;
     let velocity = 0;
     let lastX = 0;
+    let lastTime = 0;
     let animationFrame = null;
+    
+    const getX = (e) => {
+      if (e.type.includes('touch')) {
+        return e.touches[0]?.pageX || e.changedTouches[0]?.pageX || 0;
+      }
+      return e.pageX;
+    };
     
     const startDrag = (e) => {
       isDown = true;
       scroller.classList.add('is-dragging');
-      startX = (e.pageX || e.touches?.[0]?.pageX) - scroller.offsetLeft;
+      startX = getX(e) - scroller.offsetLeft;
       scrollLeft = scroller.scrollLeft;
       lastX = startX;
+      lastTime = Date.now();
       velocity = 0;
       cancelAnimationFrame(animationFrame);
     };
@@ -89,40 +98,51 @@
       isDown = false;
       scroller.classList.remove('is-dragging');
       
-      // Apply momentum scrolling
-      const momentum = () => {
-        if (Math.abs(velocity) > 0.5) {
-          scroller.scrollLeft -= velocity;
-          velocity *= 0.95; // Friction
-          animationFrame = requestAnimationFrame(momentum);
-        }
-      };
-      momentum();
+      // Apply momentum scrolling (desktop only)
+      if (Math.abs(velocity) > 1) {
+        const momentum = () => {
+          if (Math.abs(velocity) > 0.5) {
+            scroller.scrollLeft -= velocity * 0.5;
+            velocity *= 0.92;
+            animationFrame = requestAnimationFrame(momentum);
+          }
+        };
+        momentum();
+      }
     };
     
     const drag = (e) => {
       if (!isDown) return;
-      e.preventDefault();
       
-      const x = (e.pageX || e.touches?.[0]?.pageX) - scroller.offsetLeft;
-      const walk = (x - startX) * 1.2;
+      const x = getX(e) - scroller.offsetLeft;
+      const walk = (x - startX) * 1.0;
       
-      velocity = x - lastX;
+      // Calculate velocity
+      const now = Date.now();
+      const dt = now - lastTime;
+      if (dt > 0) {
+        velocity = (x - lastX) / dt * 16;
+      }
       lastX = x;
+      lastTime = now;
       
       scroller.scrollLeft = scrollLeft - walk;
     };
     
     // Mouse events
     scroller.addEventListener('mousedown', startDrag);
-    scroller.addEventListener('mouseleave', endDrag);
-    scroller.addEventListener('mouseup', endDrag);
+    document.addEventListener('mouseleave', endDrag);
+    document.addEventListener('mouseup', endDrag);
     scroller.addEventListener('mousemove', drag);
     
-    // Touch events
-    scroller.addEventListener('touchstart', startDrag, { passive: true });
-    scroller.addEventListener('touchend', endDrag);
-    scroller.addEventListener('touchmove', drag, { passive: false });
+    // Touch events - let native scroll work but track for styling
+    scroller.addEventListener('touchstart', (e) => {
+      scroller.classList.add('is-touching');
+    }, { passive: true });
+    
+    scroller.addEventListener('touchend', () => {
+      scroller.classList.remove('is-touching');
+    }, { passive: true });
   });
 
   // ========================================
