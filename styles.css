@@ -178,11 +178,19 @@ h1, h2, h3, h4 {
   border-radius: 12px;
   color: var(--accent);
   transition: all var(--duration-normal) var(--ease-out);
+  overflow: hidden;
 }
 
 .brand__icon svg {
   width: 24px;
   height: 24px;
+}
+
+.brand__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 4px;
 }
 
 .brand:hover .brand__icon {
@@ -585,6 +593,7 @@ h1, h2, h3, h4 {
 
 .hero__snapshot {
   position: relative;
+  min-width: 0; /* Important for flex children */
 }
 
 .snap-wrap {
@@ -594,6 +603,8 @@ h1, h2, h3, h4 {
   box-shadow: var(--shadow-lg);
   backdrop-filter: blur(20px);
   overflow: hidden;
+  /* Ensure proper width containment */
+  max-width: 100%;
 }
 
 .snap-header {
@@ -642,12 +653,18 @@ h1, h2, h3, h4 {
 /* Scroller */
 .snap-scroller {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   gap: 16px;
   padding: 20px;
   overflow-x: auto;
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
   cursor: grab;
+  /* Ensure children don't wrap */
+  min-width: 0;
 }
 
 .snap-scroller:active { cursor: grabbing; }
@@ -674,7 +691,8 @@ h1, h2, h3, h4 {
 .snap-card {
   flex: 0 0 auto;
   width: 420px;
-  min-width: 320px;
+  min-width: 300px;
+  max-width: 90vw;
   scroll-snap-align: start;
   background: rgba(0, 0, 0, 0.2);
   border: 1px solid var(--glass-border);
@@ -1360,19 +1378,26 @@ h1, h2, h3, h4 {
   .btn--nav { display: none; }
   
   .hero__title-line {
-    font-size: clamp(32px, 8vw, 48px);
+    font-size: clamp(28px, 7vw, 42px);
   }
   
   .hero__buttons {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
   
   .hero__buttons .btn {
-    width: 100%;
+    width: auto;
+    flex: 0 0 auto;
+  }
+  
+  .hero__buttons .btn--lg {
+    padding: 14px 20px;
+    font-size: 14px;
   }
   
   .hero__trust {
-    justify-content: center;
+    justify-content: flex-start;
   }
   
   .snap-card {
