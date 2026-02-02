@@ -5,88 +5,42 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Solutions by AB — Technology. Tailored. Full-stack launches, CRM pipelines, and automation systems." />
   <title>Solutions by AB — Technology. Tailored.</title>
-  
-  <!-- Fonts: Sharp, modern, distinctive -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-  
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- Ambient background layers -->
-  <div class="bg-base" aria-hidden="true"></div>
-  <div class="bg-grid" aria-hidden="true"></div>
-  <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
-  <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
-  <div class="bg-noise" aria-hidden="true"></div>
+  <div class="bg" aria-hidden="true"></div>
+  <div class="bgGlow" aria-hidden="true"></div>
 
   <!-- HEADER -->
   <header class="topbar">
     <a class="brand" href="#top" aria-label="Solutions by AB home">
-      <div class="brand__icon">
-        <img src="assets/logo.png" alt="Solutions by AB logo" onerror="this.style.display='none';this.parentElement.innerHTML='<svg viewBox=\'0 0 32 32\' fill=\'none\'><rect x=\'2\' y=\'2\' width=\'28\' height=\'28\' rx=\'8\' stroke=\'currentColor\' stroke-width=\'2\'/><path d=\'M10 22L16 10L22 22\' stroke=\'currentColor\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'/><path d=\'M12 18H20\' stroke=\'currentColor\' stroke-width=\'2\' stroke-linecap=\'round\'/></svg>';" />
-      </div>
+      <img class="brand__logo" src="assets/logo.png" alt="Solutions by AB logo"
+           onerror="this.onerror=null;this.src='logo.png';" />
       <span class="brand__text">Solutions by AB</span>
     </a>
 
-    <nav class="nav" aria-label="Main navigation">
-      <a href="#services" class="nav__link">
-        <span class="nav__text">Services</span>
-        <span class="nav__line"></span>
-      </a>
-      <a href="#work" class="nav__link">
-        <span class="nav__text">Delivery</span>
-        <span class="nav__line"></span>
-      </a>
-      <a href="#how" class="nav__link">
-        <span class="nav__text">Process</span>
-        <span class="nav__line"></span>
-      </a>
+    <nav class="nav">
+      <a href="#services">Services</a>
+      <a href="#work">Delivery Snapshot</a>
+      <a href="#how">How we work</a>
+      <a href="contact.html">Get in touch</a>
     </nav>
 
     <div class="topbar__cta" id="menuWrap">
-      <a class="btn btn--ghost btn--nav" href="#work">
-        <svg class="btn__icon" viewBox="0 0 20 20" fill="none">
-          <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M10 6V10L13 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-        <span>Delivery</span>
-      </a>
-      <a class="btn btn--primary" href="contact.html">
-        <span>Get in touch</span>
-        <svg class="btn__arrow" viewBox="0 0 20 20" fill="none">
-          <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
+      <a class="btn btn--ghost" href="#work">Delivery Snapshot</a>
+      <a class="btn btn--primary" href="contact.html">Get in touch</a>
 
       <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
-        <span class="burger__line burger__line--1"></span>
-        <span class="burger__line burger__line--2"></span>
-        <span class="burger__line burger__line--3"></span>
+        <span class="burger__lines" aria-hidden="true"></span>
       </button>
 
       <div class="dropdown" id="dropdownMenu" hidden>
-        <div class="dropdown__inner">
-          <a href="#services" class="dropdown__link">
-            <svg viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="3" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="11" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="11" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/></svg>
-            <span>Services</span>
-          </a>
-          <a href="#work" class="dropdown__link">
-            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M10 6V10L13 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            <span>Delivery Snapshot</span>
-          </a>
-          <a href="#how" class="dropdown__link">
-            <svg viewBox="0 0 20 20" fill="none"><path d="M3 10H7M13 10H17M7 10C7 8.34315 8.34315 7 10 7C11.6569 7 13 8.34315 13 10C13 11.6569 11.6569 13 10 13C8.34315 13 7 11.6569 7 10Z" stroke="currentColor" stroke-width="1.5"/></svg>
-            <span>How we work</span>
-          </a>
-          <div class="dropdown__divider"></div>
-          <a class="btn btn--primary btn--full" href="contact.html">
-            <span>Get in touch</span>
-            <svg class="btn__arrow" viewBox="0 0 20 20" fill="none"><path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
+        <a href="#services">Services</a>
+        <a href="#work">Delivery Snapshot</a>
+        <a href="#how">How we work</a>
+        <div class="dropdown__divider"></div>
+        <a class="btn btn--primary btn--sm" href="contact.html">Get in touch</a>
       </div>
     </div>
   </header>
@@ -94,103 +48,62 @@
   <main id="top">
     <!-- HERO -->
     <section class="hero container">
-      <div class="hero__content">
-        <div class="hero__tag reveal reveal--1">
-          <span class="hero__tag-dot"></span>
-          <span>Systems</span>
-          <span class="hero__tag-sep">•</span>
-          <span>Full-stack</span>
-          <span class="hero__tag-sep">•</span>
-          <span>Automation</span>
-        </div>
+      <div class="hero__left reveal">
+        <div class="hero__tag">Systems • Full-stack • Automation</div>
 
-        <h1 class="hero__title reveal reveal--2">
-          <span class="hero__title-line">Solutions by AB</span>
-          <span class="hero__title-line hero__title-line--accent">
-            Technology<span class="hero__title-dot">.</span> 
-            Tailored<span class="hero__title-dot">.</span>
-          </span>
+        <h1 class="hero__title">
+          <span class="hero__titleLine">Solutions by AB</span>
+          <span class="hero__titleLine accent">Technology. Tailored.</span>
         </h1>
 
-        <p class="hero__sub reveal reveal--3">
+        <p class="hero__sub">
           We build the systems behind growing businesses — from full-stack launches
           to CRM pipelines and automation that keeps operations clean as you scale.
         </p>
 
-        <div class="hero__buttons reveal reveal--4">
-          <a class="btn btn--primary btn--lg btn--glow" href="contact.html">
-            <span>Get in touch</span>
-            <svg class="btn__arrow" viewBox="0 0 20 20" fill="none">
-              <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-          <a class="btn btn--ghost btn--lg" href="#work">
-            <svg class="btn__icon" viewBox="0 0 20 20" fill="none">
-              <rect x="3" y="5" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M7 9L9 11L13 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span>See delivery snapshot</span>
-          </a>
+        <div class="hero__buttons">
+          <a class="btn btn--primary btn--glow" href="contact.html">Get in touch</a>
+          <a class="btn btn--ghost" href="#work">See delivery snapshot</a>
         </div>
 
-        <div class="hero__trust reveal reveal--5">
-          <div class="trust-item">
-            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M10 6V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="13" r="1" fill="currentColor"/></svg>
-            <span>UK-based</span>
-          </div>
-          <div class="trust-sep"></div>
-          <div class="trust-item">
-            <svg viewBox="0 0 20 20" fill="none"><path d="M3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 7V10L12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Full-stack delivery</span>
-          </div>
-          <div class="trust-sep"></div>
-          <div class="trust-item">
-            <svg viewBox="0 0 20 20" fill="none"><path d="M4 14L8 10L11 13L16 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Startup → Scale</span>
-          </div>
+        <div class="hero__trust">
+          <span class="trustItem">UK-based</span>
+          <span class="trustDot"></span>
+          <span class="trustItem">Full-stack delivery</span>
+          <span class="trustDot"></span>
+          <span class="trustItem">Startup → Scale</span>
         </div>
       </div>
 
-      <!-- DELIVERY SNAPSHOT -->
-      <div class="hero__snapshot reveal reveal--6" id="work">
-        <div class="snap-wrap">
-          <div class="snap-header">
-            <div class="snap-title">
-              <svg viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M6 8H14M6 11H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-              <span>Delivery Snapshot</span>
-            </div>
-            <div class="snap-hint">
-              <span>Drag / Swipe</span>
-              <svg viewBox="0 0 20 20" fill="none"><path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
+      <!-- DELIVERY SNAPSHOT (SCROLL/DRAG) -->
+      <div class="hero__right reveal" id="work">
+        <div class="snapWrap">
+          <div class="snapTitleRow">
+            <div class="snapKicker">Delivery Snapshot</div>
+            <div class="snapHint">Drag / Swipe →</div>
           </div>
 
-          <div class="snap-scroller" aria-label="Delivery Snapshot scroller">
-            <!-- CARD 1: Delivered -->
-            <article class="snap-card snap-card--delivered">
-              <div class="snap-card__top">
-                <div class="snap-card__dots">
-                  <span class="dot dot--green"></span>
-                  <span class="dot dot--yellow"></span>
-                  <span class="dot dot--blue"></span>
-                </div>
-                <span class="snap-card__status">Delivered</span>
+          <div class="snapScroller" aria-label="Delivery Snapshot scroller">
+            <!-- CARD 1 -->
+            <article class="snapCard">
+              <div class="snapTop">
+                <span class="dot dot--ok"></span>
+                <span class="dot dot--warn"></span>
+                <span class="dot dot--info"></span>
+                <span class="snapTop__label">DELIVERED</span>
               </div>
 
-              <div class="snap-card__body">
-                <div class="snap-card__badge snap-card__badge--live">
-                  <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" fill="currentColor"/></svg>
-                  <span>Live</span>
-                </div>
+              <div class="snapRow">
+                <div class="snapText">
+                  <div class="stageBar stageBar--live"><span class="stageDot"></span> LIVE</div>
 
-                <div class="snap-card__content">
-                  <h3 class="snap-card__title">itsadamharris.com — Full Launch Pack</h3>
-                  <p class="snap-card__desc">Website + EPK + domain email + industry-ready embeds & links.</p>
+                  <h3>itsadamharris.com — Full Launch Pack</h3>
+                  <p>Website + EPK + domain email + industry-ready embeds & links.</p>
 
-                  <div class="snap-card__actions">
-                    <a class="btn btn--primary btn--sm" href="https://itsadamharris.com" target="_blank" rel="noopener">
-                      <span>Open project</span>
-                      <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <div class="snapActions">
+                    <a class="btn btn--primary btn--sm"
+                       href="https://itsadamharris.com" target="_blank" rel="noopener">
+                      Open project
                     </a>
                     <a class="btn btn--ghost btn--sm" href="contact.html">Enquire</a>
                   </div>
@@ -198,63 +111,49 @@
               </div>
             </article>
 
-            <!-- CARD 2: In Progress -->
-            <article class="snap-card snap-card--progress">
-              <div class="snap-card__top">
-                <div class="snap-card__dots">
-                  <span class="dot dot--green"></span>
-                  <span class="dot dot--yellow"></span>
-                  <span class="dot dot--blue"></span>
-                </div>
-                <span class="snap-card__status">In Progress</span>
+            <!-- CARD 2 -->
+            <article class="snapCard">
+              <div class="snapTop">
+                <span class="dot dot--ok"></span>
+                <span class="dot dot--warn"></span>
+                <span class="dot dot--info"></span>
+                <span class="snapTop__label">IN PROGRESS</span>
               </div>
 
-              <div class="snap-card__body">
-                <div class="snap-card__badge snap-card__badge--progress">
-                  <svg viewBox="0 0 16 16" fill="none"><path d="M8 3V8L11 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-                  <span>Building</span>
-                </div>
+              <div class="snapRow">
+                <div class="snapText">
+                  <div class="stageBar stageBar--progress"><span class="stageDot"></span> IN PROGRESS</div>
 
-                <div class="snap-card__content">
-                  <h3 class="snap-card__title">Dynamic QR Property Solution</h3>
-                  <p class="snap-card__desc">Managed QR codes for listings & signage — update links anytime.</p>
+                  <h3>Dynamic QR Property Solution</h3>
+                  <p>Managed QR codes for listings & signage — update links anytime.</p>
 
-                  <div class="snap-card__actions">
-                    <a class="btn btn--ghost btn--sm" href="contact.html">
-                      <span>Enquire</span>
-                      <svg viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                  <div class="snapActions">
+                    <a class="btn btn--ghost btn--sm" href="contact.html">Enquire</a>
                   </div>
                 </div>
               </div>
             </article>
 
-            <!-- CARD 3: Concept -->
-            <article class="snap-card snap-card--concept">
-              <div class="snap-card__top">
-                <div class="snap-card__dots">
-                  <span class="dot dot--green"></span>
-                  <span class="dot dot--yellow"></span>
-                  <span class="dot dot--blue"></span>
-                </div>
-                <span class="snap-card__status">Concept</span>
+            <!-- CARD 3 -->
+            <article class="snapCard">
+              <div class="snapTop">
+                <span class="dot dot--ok"></span>
+                <span class="dot dot--warn"></span>
+                <span class="dot dot--info"></span>
+                <span class="snapTop__label">CONCEPT</span>
               </div>
 
-              <div class="snap-card__body">
-                <div class="snap-card__badge snap-card__badge--concept">
-                  <svg viewBox="0 0 16 16" fill="none"><path d="M8 2L9.5 6H14L10.5 9L12 14L8 11L4 14L5.5 9L2 6H6.5L8 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-                  <span>Planned</span>
-                </div>
+              <div class="snapRow">
+                <div class="snapText">
+                  <div class="stageBar stageBar--planned">
+                    <span class="stageStar" aria-hidden="true">☆</span> PLANNED
+                  </div>
 
-                <div class="snap-card__content">
-                  <h3 class="snap-card__title">Business Scalability System</h3>
-                  <p class="snap-card__desc">Enquiries → pipeline → CRM → automation → reporting.</p>
+                  <h3>Business Scalability System</h3>
+                  <p>Enquiries → pipeline → CRM → automation → reporting.</p>
 
-                  <div class="snap-card__actions">
-                    <a class="btn btn--ghost btn--sm" href="contact.html">
-                      <span>Build this</span>
-                      <svg viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                  <div class="snapActions">
+                    <a class="btn btn--ghost btn--sm" href="contact.html">Build this</a>
                   </div>
                 </div>
               </div>
@@ -266,96 +165,41 @@
 
     <!-- SERVICES -->
     <section id="services" class="section container">
-      <div class="section-head">
-        <div class="section-label reveal">
-          <svg viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="3" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="11" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="11" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/></svg>
-          <span>Our Services</span>
-        </div>
-        <h2 class="section-title reveal">What we deliver</h2>
-        <p class="section-sub reveal">
+      <div class="sectionHead reveal">
+        <h2>What we deliver</h2>
+        <p>
           A full-stack package for founders and teams — from launch and branding to internal systems that run the business.
         </p>
       </div>
 
-      <div class="service-grid">
-        <article class="service-card reveal">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 32 32" fill="none">
-              <rect x="4" y="6" width="24" height="18" rx="3" stroke="currentColor" stroke-width="2"/>
-              <path d="M4 12H28" stroke="currentColor" stroke-width="2"/>
-              <circle cx="8" cy="9" r="1" fill="currentColor"/>
-              <circle cx="12" cy="9" r="1" fill="currentColor"/>
-              <path d="M8 17H16M8 21H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3 class="service-card__title">Launch & Presence</h3>
-          <p class="service-card__desc">High-trust websites and landing pages built to convert and look premium.</p>
-          <ul class="service-card__list">
-            <li>
-              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8L6 11L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span>Landing pages & websites</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8L6 11L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span>EPK / portfolio builds</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8L6 11L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span>Email + domain setup</span>
-            </li>
+      <div class="serviceGrid">
+        <article class="serviceCard reveal">
+          <h3>Launch & Presence</h3>
+          <p>High-trust websites and landing pages built to convert and look premium.</p>
+          <ul class="bullets">
+            <li>Landing pages & websites</li>
+            <li>EPK / portfolio builds</li>
+            <li>Email + domain setup</li>
           </ul>
         </article>
 
-        <article class="service-card reveal">
-          <div class="service-card__icon service-card__icon--yellow">
-            <svg viewBox="0 0 32 32" fill="none">
-              <path d="M6 8C6 6.89543 6.89543 6 8 6H24C25.1046 6 26 6.89543 26 8V10H6V8Z" stroke="currentColor" stroke-width="2"/>
-              <rect x="6" y="10" width="20" height="16" rx="0" stroke="currentColor" stroke-width="2"/>
-              <path d="M11 15V21M16 15V21M21 15V21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3 class="service-card__title">CRM & Pipelines</h3>
-          <p class="service-card__desc">Enquiries turn into a clean pipeline — tracked, organised, and scalable.</p>
-          <ul class="service-card__list">
-            <li>
-              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8L6 11L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span>Forms → CRM → follow-ups</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8L6 11L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span>Lead routing & tagging</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8L6 11L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span>Dashboards & reporting</span>
-            </li>
+        <article class="serviceCard reveal">
+          <h3>CRM & Pipelines</h3>
+          <p>Enquiries turn into a clean pipeline — tracked, organised, and scalable.</p>
+          <ul class="bullets">
+            <li>Forms → CRM → follow-ups</li>
+            <li>Lead routing & tagging</li>
+            <li>Dashboards & reporting</li>
           </ul>
         </article>
 
-        <article class="service-card reveal">
-          <div class="service-card__icon service-card__icon--blue">
-            <svg viewBox="0 0 32 32" fill="none">
-              <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
-              <circle cx="22" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
-              <circle cx="16" cy="22" r="4" stroke="currentColor" stroke-width="2"/>
-              <path d="M13 12L14 18M19 12L18 18M12 22H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3 class="service-card__title">Automation & Integrations</h3>
-          <p class="service-card__desc">Reduce admin. Speed up delivery. Keep the team focused on revenue work.</p>
-          <ul class="service-card__list">
-            <li>
-              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8L6 11L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span>Notifications & reminders</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8L6 11L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span>WhatsApp + email workflows</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8L6 11L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span>Tool integration strategy</span>
-            </li>
+        <article class="serviceCard reveal">
+          <h3>Automation & Integrations</h3>
+          <p>Reduce admin. Speed up delivery. Keep the team focused on revenue work.</p>
+          <ul class="bullets">
+            <li>Notifications & reminders</li>
+            <li>WhatsApp + email workflows</li>
+            <li>Tool integration strategy</li>
           </ul>
         </article>
       </div>
@@ -363,44 +207,31 @@
 
     <!-- HOW WE WORK -->
     <section id="how" class="section container">
-      <div class="about-card reveal">
-        <div class="about-content">
-          <div class="section-label">
-            <svg viewBox="0 0 20 20" fill="none"><path d="M3 10H7M13 10H17M7 10C7 8.34315 8.34315 7 10 7C11.6569 7 13 8.34315 13 10C13 11.6569 11.6569 13 10 13C8.34315 13 7 11.6569 7 10Z" stroke="currentColor" stroke-width="1.5"/></svg>
-            <span>Our Process</span>
-          </div>
-          <h2 class="about-title">How we work</h2>
-          <p class="about-desc">
-            We build systems the way an operator would — not just "a nice website".
+      <div class="aboutCard reveal">
+        <div class="aboutCopy">
+          <h2>How we work</h2>
+          <p>
+            We build systems the way an operator would — not just “a nice website”.
             We map your flow end-to-end: enquiry → pipeline → fulfilment → retention.
           </p>
-          <p class="about-note">
+          <p class="muted">
             Typical outcomes: faster response times, less manual admin, cleaner handovers,
             and visibility across sales + delivery.
           </p>
         </div>
 
-        <div class="about-steps">
-          <div class="step">
-            <div class="step__num">01</div>
-            <div class="step__content">
-              <div class="step__title">Discovery + system mapping</div>
-              <div class="step__bar"><span></span></div>
-            </div>
+        <div class="aboutStats">
+          <div class="stat">
+            <div class="stat__num">01</div>
+            <div class="stat__label">Discovery + system mapping</div>
           </div>
-          <div class="step">
-            <div class="step__num">02</div>
-            <div class="step__content">
-              <div class="step__title">Build + integrate</div>
-              <div class="step__bar"><span></span></div>
-            </div>
+          <div class="stat">
+            <div class="stat__num">02</div>
+            <div class="stat__label">Build + integrate</div>
           </div>
-          <div class="step">
-            <div class="step__num">03</div>
-            <div class="step__content">
-              <div class="step__title">Automate + handover</div>
-              <div class="step__bar"><span></span></div>
-            </div>
+          <div class="stat">
+            <div class="stat__num">03</div>
+            <div class="stat__label">Automate + handover</div>
           </div>
         </div>
       </div>
@@ -408,24 +239,14 @@
 
     <!-- FOOTER -->
     <footer class="footer container">
-      <div class="footer__brand">
-        <div class="brand brand--footer">
-          <div class="brand__icon">
-            <img src="assets/logo.png" alt="Solutions by AB logo" onerror="this.style.display='none';this.parentElement.innerHTML='<svg viewBox=\'0 0 32 32\' fill=\'none\'><rect x=\'2\' y=\'2\' width=\'28\' height=\'28\' rx=\'8\' stroke=\'currentColor\' stroke-width=\'2\'/><path d=\'M10 22L16 10L22 22\' stroke=\'currentColor\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'/><path d=\'M12 18H20\' stroke=\'currentColor\' stroke-width=\'2\' stroke-linecap=\'round\'/></svg>';" />
-          </div>
-          <span class="brand__text">Solutions by AB</span>
-        </div>
-        <div class="footer__tagline">Technology. Tailored.</div>
+      <div>
+        <div class="footer__brand">Solutions by AB</div>
+        <div class="tiny muted">Technology. Tailored.</div>
       </div>
-      
-      <nav class="footer__links">
-        <a href="#services">Services</a>
-        <a href="#work">Delivery</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      
-      <div class="footer__copy">
-        © 2025 Solutions by AB
+      <div class="footerLinks">
+        <a class="link" href="#services">Services</a>
+        <a class="link" href="#work">Delivery Snapshot</a>
+        <a class="link" href="contact.html">Get in touch</a>
       </div>
     </footer>
   </main>
