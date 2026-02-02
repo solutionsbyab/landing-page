@@ -1,53 +1,30 @@
-const burgerBtn = document.getElementById("burgerBtn");
-const dropdownMenu = document.getElementById("dropdownMenu");
-const menuWrap = document.getElementById("menuWrap");
+// Mobile menu toggle
+const toggle = document.getElementById("menuToggle");
+const menu = document.getElementById("mobileMenu");
 
-function lockScroll(lock){ document.body.style.overflow = lock ? "hidden" : ""; }
+toggle.onclick = () => {
+  menu.classList.toggle("show");
+};
 
-function openDropdown(){
-  burgerBtn.setAttribute("aria-expanded","true");
-  burgerBtn.classList.add("is-open");
-  dropdownMenu.hidden = false;
-  lockScroll(true);
-}
-function closeDropdown(){
-  burgerBtn.setAttribute("aria-expanded","false");
-  burgerBtn.classList.remove("is-open");
-  dropdownMenu.hidden = true;
-  lockScroll(false);
-}
+// Close menu on link click
+menu.querySelectorAll("a").forEach(a=>{
+  a.onclick=()=>menu.classList.remove("show");
+});
 
-if (burgerBtn && dropdownMenu && menuWrap){
-  burgerBtn.addEventListener("click",(e)=>{
-    e.stopPropagation();
-    const open = burgerBtn.getAttribute("aria-expanded")==="true";
-    open ? closeDropdown() : openDropdown();
+// Drag to scroll (Delivery Snapshot)
+document.querySelectorAll(".snapScroller").forEach(scroller=>{
+  let down=false,startX,scrollLeft;
+
+  scroller.addEventListener("mousedown",e=>{
+    down=true;
+    startX=e.pageX;
+    scrollLeft=scroller.scrollLeft;
   });
-
-  document.addEventListener("click",(e)=>{
-    if(!menuWrap.contains(e.target)) closeDropdown();
+  scroller.addEventListener("mouseup",()=>down=false);
+  scroller.addEventListener("mouseleave",()=>down=false);
+  scroller.addEventListener("mousemove",e=>{
+    if(!down)return;
+    e.preventDefault();
+    scroller.scrollLeft=scrollLeft-(e.pageX-startX);
   });
-
-  dropdownMenu.querySelectorAll("a").forEach(a=>{
-    a.addEventListener("click",()=>closeDropdown());
-  });
-
-  window.addEventListener("scroll", closeDropdown, {passive:true});
-  window.addEventListener("touchmove", closeDropdown, {passive:true});
-}
-
-// Reveal animations
-const revealEls = document.querySelectorAll(".reveal");
-if ("IntersectionObserver" in window){
-  const obs = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add("is-visible");
-        obs.unobserve(entry.target);
-      }
-    });
-  },{threshold:0.12});
-  revealEls.forEach(el=>obs.observe(el));
-}else{
-  revealEls.forEach(el=>el.classList.add("is-visible"));
-}
+});
